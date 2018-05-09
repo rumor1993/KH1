@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			//변수 선언
+			var array = [
+				{name:"네이버", link : "http://www.naver.com"},
+				{name:"다음", link : "http://www.daum.net"},
+				{name:"구글", link : "http://www.google.com"}
+			];
+			
+			var output='';
+			$.each(array, function(index, item){
+				output += '<a href="' + item.link + '">';
+				output += '  <h1>' + (index+1) +'.'+ item.name + '</h1>';
+				output += '</a>';
+			});
+			document.body.innerHTML += output;
+		});
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

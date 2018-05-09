@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <title>Using Objects</title>
+
+
+	<script>
+	  	   
+		var saram = new Object();//사용자 정의 객체 생성
+		      
+	    
+		//생성된 객체에 속성 추가하기
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+		
+           //채우기
+          saram.print= function (){
+        	  
+        	   for(var p in saram){
+        		   if(p!='print'){
+        	   document.write(p + "=" + saram[p]+"<br>");
+        	   }
+           	}document.write("<hr>");
+          };
+        
+          saram.add =(function() {
+  			var counter=0;
+  			return function(){
+  				return counter++;
+  			}	
+  		})();
+		
+          saram.print();
+        
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+		 
+		
+		
+	
+      
+	</script>
+ </head>
+ <body>
+
+	
+ </body>
+</html>

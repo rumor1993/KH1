@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+	
+<body>
+	<script>
+		var date = new Date(2018,3,8,15,15,15);
+		var pstyle;
+		var week;
+		switch(date.getDay()){
+		case 0 :
+			pstyle = '<span style="color:red">'
+			week = pstyle + "일요일</span>";
+			break;
+		case 1 : 
+			week = "월요일";
+			break;
+		case 2 : 
+			week = "화요일";
+			break;
+		case 3 : 
+			week = "수요일";
+			break;
+		case 4 : 
+			week = "목요일";
+			break;
+		case 5 : 
+			week = "금요일";
+			break;
+		case 6 : 
+			 pstyle = '<span style="color:blue">'
+			week = pstyle + "토요일</span>";
+			break;
+		default :
+		}
+		var date2 = new Date(2018,3,7,15,15,15);
+		var week2;
+		switch(date2.getDay()){
+		case 0 :
+			pstyle = '<span style="color:red">'
+				week2 = pstyle + "일요일</span>";
+			break;
+		case 1 : 
+			week2 = "월요일";
+			break;
+		case 2 : 
+			week2 = "화요일";
+			break;
+		case 3 : 
+			week = "수요일";
+			break;
+		case 4 : 
+			week2 = "목요일";
+			break;
+		case 5 : 
+			week2 = "금요일";
+			break;
+		case 6 : 
+			 pstyle = '<span style="color:blue">'
+					week2 = pstyle + "토요일</span>";
+			break;
+		default :
+		}
+	
+		document.write("오늘 날짜: " + date.getFullYear() + "년 "
+					+ (date.getMonth()+1) + "월 "
+					+ date.getDate() + "일 "
+					+ week + "<br>"
+					+ "현재 시간: "
+					+ date.getHours() + "시 "
+					+ date.getMinutes()  + "분 "
+					+ date.getMinutes() + "초" + "<br>");
+		
+		document.write("오늘 날짜: " + date2.getFullYear() + "년 "
+				+ (date2.getMonth()+1) + "월 "
+				+ date2.getDate() + "일 "
+				+ week2 + "<br>"
+				+ "현재 시간: "
+				+ date2.getHours() + "시 "
+				+ date2.getMinutes()  + "분 "
+				+ date2.getMinutes() + "초");
+		
+		var today = new Date();
+		var answer = prompt("비교할 날짜를 입력하세요")
+        var before = new Date(answer);
+		var interval = ((today.getTime()/86400000) - (before.getTime()/86400000));
+		alert("날짜의 간격은 " + Math.ceil(Math.abs(interval))+ "일 입니다.")
+		
+	</script>
+</body>
+</html>

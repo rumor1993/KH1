@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>setTime</title>
+
+<script>
+
+var i=0;
+   var time =setInterval(function() {
+      var today = new Date();
+      var lo = today.toLocaleString();
+      document.body.innerHTML = lo;
+      i++;
+      if(i==10){
+         clearInterval(time);
+      }
+   }, 1000);
+   
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상 클래스(pseudo class) 선택자 - ':' 기호를 사용하는 선택자</title>
+</head>
+	<style>
+		a {text-decoration:none;}
+		a:visited{color:red;}
+		/* href 속성을 가지고 있는 a 태그 뒤의 공간에
+		content의 값인 "- (href 속성)"을 추가*/
+		a:link::after{content:' - ' attr(href);}
+		a::after{content: ' - href 없어요 - ';}
+	</style>
+<body>
+	<h1>링크 선택자</h1>
+	<!-- href 속성을 적용하지 않아서 스타일 적용되지 않음 -->
+	<h1><a>Nothing</a></h1>	
+	<h1><a href="http://github.com">Github</a></h1>
+	<h1><a href="http://www.w3.org/">W3C</a></h1>
+</body>
+</html>

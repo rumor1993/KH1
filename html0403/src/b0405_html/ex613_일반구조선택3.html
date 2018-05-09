@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+		li{width:100px;
+		height:60px;
+		float:left;
+		text-align:center;
+		list-style-type:none;
+		padding-top:30px;}
+		/* 텍스트 중앙으로 오는 방법 
+		height 를 주고 line-height로 height와값을똑같이주면됨 */
+		
+		li:nth-child(2n+1){
+		background-color:pink;
+		}
+		li:nth-child(2n){
+		background-color:purple;
+		}
+		li:first-child{border-radius:15px 0px 0px 15px;}
+		li:last-child{border-radius:0px 15px 15px 0px;}
+		p{clear:left;padding-left:40px;}
+</style>
+</head>
+<body>
+	<ul>
+		<li>First</li>
+		<li>Second</li>
+		<li>Third</li>
+		<li>Fourth</li>
+		<li>Fifth</li>
+		<li>Sixth</li>
+		<li>Seventh</li>
+	</ul>
+	<p>나는 꿈툴이입니다.</p>
+
+</body>
+</html>

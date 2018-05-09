@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<script>
+		//함수 정의(선언)
+		function returnFunction(){
+			return function(){
+				alert('Hello Function ..!');
+			};
+		}
+		//함수 호출 방법
+		returnFunction()();
+		//함수를 호출하면 함수가 리턴됩니다
+		//리턴된 함수를 호출하기 위해 ()를 한번 더 사용합니다.
+		
+		var result = returnFunction();
+		result();
+		
+		//함수 호출 방법 : 즉시 호출 함수(immediate function)
+		(function(){
+			return function(){
+				alert('Hello Function 즉시.. !');
+			};
+		})()();
+		
+		
+	</script>
+</body>
+</html>

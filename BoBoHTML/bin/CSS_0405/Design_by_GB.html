@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design_by_GB</title>
+</head>
+	<style>
+		legend{text-align:center; color:green; font-size:20pt; font-weigth:bolder; }
+		input{border:2px solid blue; border-radius:5px; font-size:15pt}
+		fieldset{width:400px; border-color:red;margin:auto; background-image:url(bonobono.jpg)}
+		#button{border: 2px solid green; background-color:green; color:white; width:400px}
+		#time{width:30%}
+		#name{width:47%}
+		#email,#pw{width:98%}
+	</style>
+<body>
+	<form method="get" action="result.html">
+		<fieldset>
+		<legend><strong>입력폼<strong></legend>
+		<p><input id="name" type="text" name="familyname"
+						placeholder="성">&nbsp;
+			<input id="name" type="text" name="name"
+					placeholder="이름"></p>
+			
+			<p><input id="email"type="email" name="email"
+			placeholder="Email" required></p>
+			
+			<p><input id="pw" type="text" name="pw"
+			placeholder="패스워드"></p>
+			
+			<p><input id="pw"type="text" name="repw"
+			placeholder="패스워드확인"></p>
+			
+			<p><input id="time" type="number" name="month"
+			placeholder="월" min="1" max="12">&nbsp;
+			<input id="time" type="number" name="day"
+			placeholder="일"min="1" max="31">&nbsp;
+			<input id="time" type="number" name="year"
+			placeholder="년도"></p>
+			
+			<p>성별 : 
+			<label for="male">남성</label>
+			<input type="radio" name="gender" id="male" value="male">
+			<label for="female">여성</label>
+			<input type="radio" name="gender" id="female" value="female">
+			</p>
+			
+			<p><input id="button" type="submit" value="회원가입"></p>
+		</fieldset>
+	</form>
+</body>
+</html>

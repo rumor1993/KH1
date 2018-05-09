@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- 자바스크립트의 모든 함수는 내부에 변ㅅ arguments가 있다.
+	변수 arguments는 넘어온 인자의 순서에 따른 인덱스를 가진 유사배열객체이다
+	arguments[0]은 넘어온 인자의 순서 중 처음 인자의 값을 의미한다.
+	arguments.length에서 length는 매개변수의 갯수를 구하는 속성이다.
+	배열과 비슷하지만 배열을 다루는 모든 메소드를 가지고 있지 않다. -->
+<body>
+	<script>
+		//함수 정의(선언)
+		function sumAll(){
+			var output = 0;
+			for(var i =0; i<arguments.length; i++){	
+			output +=arguments[i]
+			}
+			return output;
+		}
+				
+				/*
+		함수를 호출
+		함수를 정의할 때는 매개변수가 없지만 호출시에는 매개변수의 갯수가 9개이다
+		이 처럼 함수를 정의할 때와 다르게 호출시 매개변수의 갯수를 다르게 사용하는 경우를
+		가변 인자 함수라고 한다.
+		*/
+		document.write("합 = " + sumAll(1,2,3,4,5,6,7,8,9));
+		var result = sumAll(1,2,3,4,5,6,7,8,9);
+		document.write("<hr>합 = " + result);
+	</script>
+</body>
+</html>

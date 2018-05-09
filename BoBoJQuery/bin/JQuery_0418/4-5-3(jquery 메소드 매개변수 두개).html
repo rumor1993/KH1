@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- div 태그를 클릭했을 때 클릭한 div 태그 내부의 h1태그와 p태그가 가지는 내용을
+			출력하려면 어떻게 해야 할까요?
+		jquery 메소드는 두개의 매개변수를 사용할 수 있습니다
+		형식) $(selector, context)
+			context는 selector가 적용하는 범위를 한덩하며 이벤트와 함께 사용합니다.
+			
+			아래의 예제처럼 div 태그 내부의 h1태그와 p태그가 가지는 내용을 출력하는 방법은?
+			기존 방식대로 $('h1')과 같은 방식으로 선택하면 페이지 전체의 h1태그를 선택합니다.
+			특정 부분에 선택자를 적용하고 싶을 때 사용하는 것이 매개변수 context립니다.-->
+	 <script>
+	 	$(document).ready(function(){
+	 	
+	 		$('div').click(function(){
+	 /* 변수를 선언합니다
+	 	div 태그 안의 h1태그와 p태그를 선택하고 싶을 때 this를 두 번째 매개변수로 넣어줍니다.
+	 	this는 이벤트가 발생한 객체를 의미합니다.
+	 	즉, 선택한 div태그 안의 h1태그를 선택해서 텍스트를 가져옵니다.
+	 	
+	 */
+	 
+	 			var header = $(this).find('h1').text();
+	 			var paragraph = $(this).find('p').text();
+	 			alert(header + '\n' + paragraph);
+	 		
+	 		})
+	 	});
+	 </script>
+	 <style>
+	 	div{border: 3px solid black; border-radius:10px;
+	 		 margin:5px; padding:3px; width:200px;}
+	 </style>
+</head>
+<body>
+	<div>
+		<h1>Header 1</h1>
+		<p>Paragraph</p>
+	</div>
+	<div>
+		<h1>Header 2</h1>
+		<p>Paragraph</p>
+	</div>
+	<div>
+		<h1>Header 3</h1>
+		<p>Paragraph</p>
+	</div>
+</body>
+</html>

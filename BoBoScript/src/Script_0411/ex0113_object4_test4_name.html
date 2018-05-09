@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 - Object</title>
+		<style>
+			div {margin: 0 auto; width: 600px;}
+			table {width:100%; border-collapse: collapse;}
+			table th {background-color: #FFC4EB;}
+			table th,td {border: 1px solid #BDBDBD; 
+			           text-align: center}
+			caption{font-size:30px;color:green}           
+		</style>
+	</head>
+	<body>
+		<script>
+			//객체 생성 방법
+
+			//1. new 연산자 이용하기
+
+			var saram = new Object();//사용자 정의 객체 생성			
+			var htmllist = "";
+			var prptList = "";
+
+			//생성된 객체에 속성 추가하기
+			saram.name = "홍길동";
+			saram.age = 25;
+			saram.ki = 170.2;
+			saram.blood = "A";
+			saram.address = "서울시 강남구";
+			saram.print = function(){		
+			//출력 방법 : for문 이용
+			for(var p in saram) {	//객체 saram의 모든 property를 차례대로 p에 저장
+				var chuga='';
+				if(p!='print' && p!='name'){
+					switch(p){
+					  case "age" : 
+						  chuga='세'; 
+						  break;
+					  case "ki" : 
+						  chuga='cm'; 
+						  break;	  
+					  case "blood" : 
+						  chuga='형';					  
+					}//switch
+					prptList += "<tr> <td>"+"saram."+p+"</td> <td>" 
+					  + saram[p] + chuga + "</td> </tr>"
+					
+				}//if
+				
+			}//for
+			
+			htmllist += "<div><table>";
+			htmllist += "<caption> 신상 정보 </caption>";
+			htmllist += "<tr> <th>항목(속성:property)</th> <th>내용(값:value)</th> </tr>";			
+			htmllist += prptList;			
+			htmllist += "</table></div>";
+			
+			//document.body.innerHTML = htmllist;
+			document.write(htmllist);
+			}//function
+			
+			saram.print();
+			
+			
+		</script>
+
+	</body>
+
+</html>		

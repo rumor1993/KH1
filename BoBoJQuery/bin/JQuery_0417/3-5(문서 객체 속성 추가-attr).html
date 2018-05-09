@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+	<!-- -->
+	<script>
+		$(document).ready(function(){
+			$('img').attr('width',
+					function(index){
+				return(index +1)*100;
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="../image/image1.png">
+	<img src="../image/image2.png">
+	<img src="../image/image3.png">
+</body>
+</html>

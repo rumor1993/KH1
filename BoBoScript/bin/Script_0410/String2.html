@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체의 메소드 활용</title>
+</head>
+<body>
+	<h3>남녀 판독기</h3>
+	<script>
+	var a = prompt("주민번호를 입력하세요?");
+	if(a.substr(7,1) == 1||a.substr(7,1) == 3){
+		document.body.style.background='blue';
+		document.write("<hr>남자<br>");
+	}else if(a.substr(7,1) == 2||a.substr(7,1) == 4){
+		document.body.style.background='red';
+		document.write("<hr>여자<br>");
+		}
+	document.write(a);
+	</script>
+</body>
+</html>

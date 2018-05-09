@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!--*너비와 높이, 투명도가 변화
+	1. show()		: 숨겨진 요쇼를 화면에 표시한다.
+	2. hide()		: 화면의 요소를 화면에서 제거한다.
+	3. toggle()		: show()와 hide()를 반복
+	*투명도 변화
+	4. fadeIn()		: 숨겨진 요소를 화면에 표시한다.
+	5. fadeOut() 	: 화면의 요소를 화면에서 표시하지 않게 한다.
+	6. fadeToggle()	: fadeIn()와 fadeOut()를 반복한다.
+	*높이 변화
+	7. slideDown()	: 숨겨진 요소를 화면에 표시한다.
+	8. slideUp()	: 화면의 요소를 화면에서 표시하지 않게 한다.
+	9. slideToggle(): slideDown()과 slideUp()을 반복한다.
+	
+	- toggle은 두 함수를 반복하여 나타낸다.
+	  -->
+ 	<script>
+ 	$(document).ready(function(){
+ 		$('button').click(function(){
+ 			$('.page').hide('slow');
+ 		})
+	});
+	 </script>
+	 
+</head>
+<body>
+	<button>Hide</button>
+	<div class="page">
+		<h1>졸린가요?</h1>
+		<p>밤에 푹~ 주무세요</p>
+	</div>
+</body>
+</html>

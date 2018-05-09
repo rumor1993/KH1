@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display : inline-block 적용 예</title>
+</head>
+<!-- display : inline-block 스타일인 경우
+	 block 속성인 width와 height 크기 조절 가능하고
+	 padding, border, margin 조절 가능하다.
+	 inline 속성인 새 라인에서 시작하지 못하고
+	 옆에 다른 요소 배치 가능하다.
+	 
+	 body{background-color:olive} -->
+	<style>
+		span{	
+				display:inline-block;
+				border:5px dotted orange;
+				background-color:pink;
+				width:700px;		
+				height:100px;		
+				text-align:center;	
+				margin-right:20px}
+	</style>	
+<body>
+	<span>display속성의 inline은 줄바꿈이 되지 않고 width, height적용 안되요</span>
+	<strong>제가 어디에 있나요?</strong>
+</body>
+</html>

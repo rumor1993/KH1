@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#sun {
+			color: red;
+		}
+		#sat {
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var nal = prompt("비교할 날짜를 입력하세요.", "2018-04-05");
+		alert("날짜간격은 4일 입니다.");
+		var today2 = new Date('2018,4,8');
+		var today3 = new Date();
+		var yoil = new Date('2018,4,8').getDay();
+		var yo;
+		switch (yoil) {
+		case 0:
+			yo ="<span id='sun'>일요일</span>";
+			break;
+		case 1:
+			yo = "월요일";
+			break;
+		case 2:
+			yo = "화요일";
+			break;
+		case 3:
+			yo = "수요일";
+			break;
+		case 4:
+			yo = "목요일";
+			break;
+		case 5:
+			yo = "금요일";
+			break;
+		case 6:
+			yo = "<span id='sat'>토요일</span>";
+			break;
+
+		}
+
+		document.write("오늘 날짜: " + today2.getFullYear() + "년 "
+
+				+ (today2.getMonth() + 1) + "월 " + today2.getDate() + "일 " + yo
+
+				+ "<br>");
+
+		document.write("현재 시간: " + today3.getHours() + "시 "
+
+				+ today3.getMinutes() + "분 " + today3.getSeconds()
+
+				+ "초<br><br>");
+
+ 
+
+		var today4 = new Date('2018,4,7');
+
+		var yoil = new Date('2018,4,7').getDay();
+
+		var yo;
+
+		switch (yoil) {
+
+		case 0:
+
+			yo = "일요일";
+
+			break;
+
+		case 1:
+
+			yo = "월요일";
+
+			break;
+
+		case 2:
+
+			yo = "화요일";
+
+			break;
+
+		case 3:
+
+			yo = "수요일";
+
+			break;
+
+		case 4:b
+
+			yo = "목요일";
+
+			break;
+
+		case 5:
+
+			yo = "금요일";
+
+			break;
+
+		case 6:
+
+			yo = "<span id='sat'>토요일</span>";
+
+			break;
+
+		}
+
+		document.write("오늘 날짜: " + today4.getFullYear() + "년 "
+
+				+ (today4.getMonth() + 1) + "월 " + today4.getDate() + "일 " + yo
+
+				+ "<br>");
+
+		document.write("현재 시간: " + today3.getHours() + "시 "
+
+				+ today3.getMinutes() + "분 " + today3.getSeconds()
+
+				+ "초<br><br>");
+
+	</script>
+
+</body>
+
+</html>

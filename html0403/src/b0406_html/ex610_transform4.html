@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>  
+ <head>  
+<meta charset="UTF-8">
+<title>transform(변환)</title>
+<!-- 텍스트나 이미지를 회전이나 확대 등 다양한 기하학적인 모양으로 출력할 수 있다.
+	변환에서 사용되는 회전 각도의 단위는 deg이며 시계방향으로 회전한다. -->
+
+<style>   
+#abc1{
+	display:inline-block;
+	position:absolute;
+	left:300px;
+	top:30px;
+	width:70px; height:10px;
+	background:black;
+	}
+#abc2{
+	display:inline-block;
+	position:absolute;
+	left:300px;
+	top:50px;
+	width:70px; height:10px;
+	background:black;
+	}
+#abc3{
+	display:inline-block;
+	position:absolute;
+	left:300px;
+	top:70px;
+	width:70px; height:10px;
+	background:black;
+	}
+	
+	
+.container:hover > #abc1{
+transform:rotate(45deg);
+top:50px;
+transition:top 2s, transform 2s;
+}
+.container:hover > #abc2{
+/* display:none; */opacity:0;
+}
+.container:hover > #abc3{
+transform:rotate(-45deg);
+top:50px;
+transition:top 2s, transform 2s;
+}
+
+</style>  
+</head>
+<body>
+	<div class="container">
+		<div id="abc1"></div>
+		<div id="abc2"></div>
+		<div id="abc3"></div>
+	</div>
+</body>
+</html>

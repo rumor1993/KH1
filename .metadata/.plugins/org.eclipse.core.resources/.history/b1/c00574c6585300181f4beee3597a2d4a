@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+	<%@ include file="/board/header.jsp" %>
+	<form action="./BoardAddAction.bo" method="post"
+			enctype="multipart/form-data" name="boardform">
+		<table>
+			<tr class="center">
+				<th colspan="2">MVC 게시판-write 페이지</th>
+			</tr>
+			<tr>
+				<td><div>글쓴이</div></td>
+				<td>
+					<input name="BOARD_NAME" id="board_name" readOnly
+					type="text" size="10" maxlength="10" value="${id }">
+		</table>
+	</form>
+</body>
+</html>

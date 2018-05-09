@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 생성</title>
+</head>
+<body>
+   <script>
+   //객체 생성 방법
+   //1. new 연산자 이용하기
+   // var saram = new Object(); 사용자 정의 객체 생성
+   
+   //2. 객체 리터럴(콜론으로 구별되는 property와 값의 쌍으로 쉼표로 분리된 목록)
+   var saram = {
+	   'name' : "나최고",
+	   'age' : 25,
+	   ki : 170.2,
+	   blood : 'A',
+	   address : '서울시 강남구'
+   };
+   
+   for(var p in saram){
+	   document.write(p+ ":" +  saram[p] + "<br>");
+   }
+   
+   
+   </script>
+</body>
+</html>

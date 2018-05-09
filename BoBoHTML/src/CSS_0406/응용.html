@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>transform(변환)</title>
+</head>
+
+	<style>
+		.container>div{width:100px; height:10px; margin:10px auto;
+						background-color:black;}	
+		body>div{margin-top:100px}
+		.container:hover>.bar1{transform: rotate(45deg) translate(0px,27px);
+							  transition : 2s	}
+		.container:hover>.bar2{visibility:hidden}	
+		.container:hover>.bar3{transform: rotate(-45deg) translate(0px,-27px);
+								transition : 2s	}		
+	</style>
+		
+<body>
+	<div class="container">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+</body>
+</html>

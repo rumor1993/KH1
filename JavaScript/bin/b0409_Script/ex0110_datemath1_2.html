@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /* Date 객체
+     - 컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+     - 메서드의 종류
+       getFullYear() - 연도(yyyy)
+       getMonth() - 월(0:1월 ~ 11:12월)
+       getDate() - 일
+       getDay() - 요일(0:일요일 ~ 6:토요일)
+       getHours() - 시간
+       getMinutes() - 분
+       getSeconds() - 초
+       getTime() - 1970년 1월 1일부터 경과된 시간을 밀리초로 구함
+       getMilliseconds() - 밀리초(1/1000초)를 리턴
+       toLocaleString() - 객체의 시간 정보를 local 표현의 문자열로 리턴
+       예) var today = new Date();
+   
+   */
+   var today = new Date();
+   var week = new Array('일', '월', '화', '수', '목', '금', '토');
+   
+   document.write('현재 날짜: ' + today.getFullYear() + '년 ' 
+		                     + (today.getMonth()+1) + '월 ' 
+		                     + today.getDate() + '일 '
+		                     + week[today.getDay()] + '요일');
+   document.write('<br />');
+   document.write('현재 시간: ' + today.getHours() + '시 ' 
+		                     + today.getMinutes() + '분 ' 
+		                     + today.getSeconds() + '초' + '<br />');
+   document.write('<br />');
+   document.write(today.toLocaleString()+"<hr>");
+   document.write("getMilliseconds() = " + today.getMilliseconds() + "<hr>");
+  </script>
+</body>
+</html>

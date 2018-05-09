@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function changeflower(){
+		var changeflower= document.getElementById('flower');
+		
+		changeflower.src="flower.jpg";
+		changeflower.width= 500;
+		changeflower.height = 500;
+		
+	};
+</script>
+</head>
+<body>
+	꽃으로 바꾸어 주세요 <br>
+	<img src = "Koala.jpg" id="flower"
+		onclick="changeflower()"><!-- 이미지를 클릭하는 경우 -->
+</body>
+</html>

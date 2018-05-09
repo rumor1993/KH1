@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>confirm : [확인][취소] 버튼이 있는 대화 상자</title>
+</head>
+<body>
+	
+	<script>
+		var answer = prompt("단을 입력하세요");
+		answer = answer.trim();
+		
+		
+		if(!isNaN(answer)){//isNaN(value) : value가 숫자가 아니면 true 리턴
+			document.write(answer + "단" + "<br>");
+		for(var i=1; i<=9; i++)
+			document.write(answer + " x "+ i + " = " + answer*i+ "<br>");
+		}else if(isNaN(answer)){//isNaN(value) : value가 숫자가 아니면 true
+			alert('숫자만 입력 가능합니다.')
+		}else{
+			alert('데이터를 입력하세요');
+		}
+		document.write("<hr>");	
+		document.write(answer + "단" + "<br>");
+		document.write(answer + " x 1 = " + answer*1 + "<br>");
+		document.write(answer + " x 2 = " + answer*2 + "<br>");
+		document.write(answer + " x 3 = " + answer*3 + "<br>");
+		document.write(answer + " x 4 = " + answer*4 + "<br>");
+		document.write(answer + " x 5 = " + answer*5 + "<br>");
+		document.write(answer + " x 6 = " + answer*6 + "<br>");
+		document.write(answer + " x 7 = " + answer*7 + "<br>");
+		document.write(answer + " x 8 = " + answer*8 + "<br>");
+		document.write(answer + " x 9 = " + answer*9 + "<br>");
+		
+		
+	</script>
+	
+</body>
+</html>

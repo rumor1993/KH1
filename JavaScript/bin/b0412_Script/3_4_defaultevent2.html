@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{margin:20 auto}
+	fieldset{margin:0 auto; width:500px}
+	form{margin: 0 auto; width:400px}
+	label{display:inline-block;width:150px}
+	input{
+		border-radius:3px;
+		border: 1px solid green;
+		height:23px;
+		width:200px;
+		margin-bottom:5px;
+	}
+	
+	input:focus{
+		outline:none;
+		border:1px dotted green}
+	label{color:purple}
+	input[type="submit"]{
+		background:green; height:30px;
+		display:inline-block;margin-left:39%}
+	input[type="submit"]:hover{opacity:0.8}
+</style>
+<!--
+	디폴트 이벤트 : 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+				이러한 것을 디폴트 이벤트라고 합니다.
+				
+	예를 들어 a태그는 클릭하면 다른 페이지로 이동하는데 이것이
+	a태그가 가진 디폴트 이벤트 입니다.
+	또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 제출하고 페이지를
+	새로고침하는 것이 디폴트 이벤트입니다.
+	
+	디폴트 이벤트 제거하는 방법
+	1.obj.onsubmit = function(){
+			....
+			return false;
+			}
+	2.event.preventDefault()를 사용하는 경우
+	  <a href="http://www.naver.com"
+	     onclick="event.preventDefault()">
+	     
+	3.function whenSubmit(){
+		...
+		return false;
+	}
+	<form onsubmit="return whenSubmit()">
+	  -->
+	 <script>
+	 function whenSubmit(){
+		 var name = document.getElementById('name');
+		 var pass = document.getElementById('pass');
+		 var passCheck = document.getElementById('pass-check');
+		 
+		 if(name.value==''){
+			 alert('이름을 입력하세요');
+			 name.focus();
+			 return false;
+		 }else if(pass.value ==''){
+			 alert('비밀번호를 입력하세요');
+			 pass.focus();
+			 return false;
+		 }else if(passCheck.value==''){
+			 alert('비밀번호 확인을 입력하세요');
+			 passCheck.focus();
+			 return false;
+		 }
+		 
+		 if(pass.value == passCheck.value){
+			 alert('성공');
+		 }else{
+			 alert('비밀번호가 다릅니다. 다시 입력해 주세요'  );
+			 pass.value='';
+			 passCheck.value='';
+			 pass.focus();
+			 return false;
+		 }
+		 
+	 }
+	 </script>
+</head>
+<body>
+<fieldset>
+		<legend>회원 가입 폼</legend>
+		<form onsubmit="return whenSubmit()"
+			  action ="3_3_event.html">
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name"><br>
+			
+			<label for="pass">비밀번호</label>
+			<input type="password" name="pass" id="pass"><br>
+			
+			
+			<label for="pass-check">비밀번호 확인</label>
+			<input type="password" id="pass-check"><br>
+			
+			<input type="submit" value="제출">			
+		</form>
+	</fieldset>
+</body>
+</html>

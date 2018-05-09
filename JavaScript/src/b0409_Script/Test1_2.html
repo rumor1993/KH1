@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+</head>
+<body>
+<script>
+var today = new Date();
+var answer=prompt("비교할 날짜를 입력하세요","2018-04-05");
+var before = new Date(answer);
+
+var one=24*60*60*1000;
+var interval=Math.round(Math.abs((today.getTime() - before.getTime())/one));
+
+
+document.write(interval+"일<br>");
+
+
+</script>
+</body>
+</html>

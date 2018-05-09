@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script>
+	
+		$(document).ready(function(){
+			var a = prompt("이름을 입력하시오");
+			$('input:text').val(a)
+							.css('color','green')
+							.css('background','orange');//한 문장
+							
+		}
+		);
+	</script>
+</head>
+<body>
+	<input type="text" placeholder="이름"> <br>
+</body>
+</html>

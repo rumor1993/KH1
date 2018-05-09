@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!--텍스트 노드를 갖지 않는 문서 객체 생성법
+	$()메소드의 두 번째 매개변수에 객체를 넣고 원하는 속성을 입력하시오 -->
+	<script>
+		$(document).ready(function(){
+			$('<img>',{
+				src:'../image/bono.jpg',
+				width:350,
+				height:250,
+				onclick:function(){alert("나는 그놈입니다.")},//처음에 나옴
+				click:function(){alert("나는 보노보노입니다.")}//클릭하면 나옴
+			}).appendTo('body');
+			
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

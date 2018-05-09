@@ -1,0 +1,16 @@
+package net.board.db;
+
+public class Board {
+
+	private int BOARD_NUM 
+	private BORAD_NAME 
+	private BORAD_PASS 
+	private BORAD_SUBJECT 
+	private BORAD_CONTENT 
+	private BORAD_FILE
+	private BORAD_RE_REF
+	private BORAD_RE_LEV 
+	private BORAD_RE_SEQ 
+	private BORAD_READCONUT
+	private BORAD_DATE 
+}

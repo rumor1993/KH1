@@ -1,0 +1,43 @@
+package net.member.action;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class LogoutAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		out.println("<script>");
+		out.println("alert('로그아웃 되었습니다.');");
+		out.println("location.href='login.net'");
+		out.println("</script>");
+		
+		return null;
+		
+		
+/*		
+  		forward의 경우 버퍼에 담겨있던 내용을 버리고 이동하기 때문에
+  		alert창과 함께 forward를 사용하면 alert창이 실행되지 않고
+  		바로 이동합니다.
+ 
+ * 		ActionForward froward = new ActionForward();
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		forward.setPath("login.net");
+		forward.setRedirect(true);
+		return forwrad*/
+		
+	}
+
+}
+

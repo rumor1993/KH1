@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%-- fmt: 국제화/형식화의 기능을 제공해 주는 JSTL 라이브러리 입니다.
+	fmt 라이브러리를 등록하는 코드 입니다. --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSTL fmt 라이브러리 예제</title>
+</head>
+<body>
+	<%-- <fmt:setLocale> 다국어 페이지를 사용할 때 언어를 지정하는 태그입니다.
+			value : 어떤 언어를 사용할 지 지정하는 속성입니다.
+			ko_KR에서 ko는 한글의 언어코드이고 --
+			KR은 한국의 국가코드를 의미합니다.
+			value 값이 null 이면 기본 로케일이 사용 됩니다.
+	--%>
+	
+	<%-- <fmt:setLocale value="en_US"/> --%>
+	<fmt:setLocale value="ko_KR"/>
+	
+	<fmt:bundle basename="test">
+	<%-- <fmt:bundle>
+			properties 확장명을 가진 파일의 리소스를 불러올 때 사용합니다.
+			basename에는 properties 확장명을 가진 파일을 지정할 수 있습니다.
+			
+		예) <fmt:setLocale value="ko_KR"> 인 경우 파일명은
+			"test" + "_" + "kr" + ".properties"
+			==> "test_ko.properties" 이어야 합니다.
+			
+		예) <fmt:setLocale value="en_US"> 인 경우 파일명은
+			"test" + ".properties"
+			==> "test.properties" 이어야 합니다.
+			
+			 --%>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델(Box Model) : box-sizing:content-box</title>
+<!-- 각 HTML 태그 요소를 하나의 박스로 보고, 박스 크기, 박스 배경색,
+		박스 여백 등 HTML 태그를 박스로 다루는 체계를 의미합니다.
+		
+		box-sizing : content-box
+			CSS 표준에 의해 정의된 기본 스타일로
+			width와 height 속성은 오로지 콘텐츠만을 포함하여 측정되며,
+			padding, boder, margin을 포함하지 않는다.
+			 -->
+<style>
+	div{box-sizing:content-box;}
+	/* 한줄  */
+</style>
+</head>
+<body>
+	<div id="first">first</div>
+	<div id="second">second</div>
+	<div id="third">third</div>
+	<div id="third_clip">third_clip</div>
+	<div id="fourth">fourth</div>
+	<div id="fifth">fifth</div>
+
+</body>
+</html>

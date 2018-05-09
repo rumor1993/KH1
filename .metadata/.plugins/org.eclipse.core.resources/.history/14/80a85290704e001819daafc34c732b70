@@ -1,0 +1,20 @@
+$(document).ready(function(){
+	$('button:submit').submit(function(){
+		if(('input[name=pass]').val() == ""){
+			alert('비밀번호를 입력하세요');
+			$(this).focus();
+		
+
+		}
+		
+		}
+	});
+	
+	$('input[name=id]').keyup(function(){
+		
+	})
+	eng = /[^a-z|^A-Z]/g;
+	if(('input[name=id]').val() == eng){
+		alert('아이디를 영문으로 입력하세요');
+		$(this).focus();
+});

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 자바스크립트 내장 객체 - Date 와 Math Objects </title>
+</head>
+<body>
+<script>  
+   
+   
+    //시스템의 현재 날짜로 초기화된 Date객체를 생성합니다.
+    var today = new Date(2018,3,8, 15,15,15);
+        
+    var y4 = today.getFullYear(); //네자리 년도   
+    var m = today.getMonth() + 1; 
+    var d = today.getDate(); //일
+    var yoil = today.getDay();
+   
+    var output =  "오늘 날짜: " + y4 + "년 " + m + "월 " + d + "일" ;
+    var pstyle;
+    switch(yoil){
+    case 0 :
+    	   pstyle = '<span style="color:red">'
+    		output += pstyle + ' 일요일 </span>';
+    	break;
+    case 1 :
+    	output += ' 월요일';
+    	break;
+    case 2 :
+    	output += ' 화요일';
+    	break;
+    case 3 :
+    	output += ' 수요일';
+    	break;
+    case 4 :
+    	output += ' 목요일';
+    	break;
+    case 5 :
+    	output += ' 금요일';
+    	break;
+    case 6 :
+    	
+    	pstyle = '<span style="color:blue">'
+    		output += pstyle + ' 토요일 </span>';
+    	break;
+    
+    	
+    }
+    document.write(output + "<br>");
+    
+    document.write("현재 시간: " + today.getHours() + "시 " 
+    		        + today.getMinutes() + "분 " 
+    		        + today.getSeconds() + "초<br>");
+    
+    var today = new Date();
+	var answer = prompt("비교할 날짜를 입력하세요")
+    var before = new Date(answer);
+	var interval = ((today.getTime()/86400000) - (before.getTime()/86400000));
+	alert("날짜의 간격은 " + Math.ceil(Math.abs(interval))+ "일 입니다.")
+  
+</script>
+ 
+</body>
+</html> 
+
+

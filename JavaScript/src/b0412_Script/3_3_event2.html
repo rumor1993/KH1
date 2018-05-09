@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	*{text-align :center}
+	table{width:500px;margin:0 auto;}
+	td:first-child{background-color : yellow;}
+	tr:last-child{background-color : green;}
+	tr:last-child>td:first-child{background-color: white;}
+</style>
+
+</head>
+<body>
+<form action="">
+	<h2>서적 주문 양식</h2>
+	<table border="1">
+		<tr>
+			<th>책 제목</th>
+			<th>가격</th>
+			<th>수량</th>
+			<th>합계</th>
+		</tr>
+	
+		<tr>
+			<td>4차 산업</td>
+			<td>25,000원</td>
+			<td><input id="book1" type="text" size="2" value="0"
+					onclick="this.select();"/></td>
+					<!-- 이벤트 핸들러를 직접 기술하여 등록방식
+					this.select()는 각 서적 수량을 표시하는 텍스트박스를
+					클릭하면 그 값이 선택되도록 하는 기능을 갖는다.
+					this는 (input)요소의 DOM을 가리키게 된다.
+					즉, 자신이 속한 DOM을 가리키는 것이다.  -->
+			<td><input id="book1total" type="text" size="6" 
+			value="0"/>원</td>
+		</tr>
+		
+		<tr>
+			<td>다이어트</td>
+			<td>27,000원</td>
+			<td><input id="book2" type="text" size="2" value="0"
+					onclick="this.select();"/></td>
+			<td><input id="book2total" type="text" size="6" 
+			value="0"/>원</td>
+		</tr>
+		
+		<tr>
+			<td>윤식당</td>
+			<td>25,000원</td>
+			<td><input id="book3" type="text" size="2" value="0"
+					onclick="this.select();"/></td>
+			<td><input id="book3total" type="text" size="6" 
+			value="0"/>원</td>
+		</tr>
+		
+		<tr>
+			<td>합계 </td> <td> &nbsp; </td>
+			<td><input id="totalNum" type="text" size="2"
+					value="0"/></td>
+			<td><input id="totalprice" type="text" size="6" value="0"/>원</td>
+			
+		</tr>
+	</table><br/>
+	<input type="button" value="합계계산" onclick="updateAll()"/>
+	<input type="reset" value="초기화"/>
+	<input type="submit" value="제출">
+	
+<script>
+	function updateAll(){
+	var n1 = document.getElementById("book1").value;
+	var n2 = document.getElementById("book2").value;
+	var n3 = document.getElementById("book3").value;
+	
+	var p1 = 25000*n1;
+	var p2 = 27000*n2;
+	var p3 = 25000*n3;
+	
+	document.getElementById("book1total").value=p1;
+	document.getElementById("book2total").value=p2;
+	document.getElementById("book3total").value=p3;
+	
+	var totalNumber = Number(n1) + Number(n2) +Number(n3);
+	document.getElementById("totalNum").value=totalNumber;
+	
+	var totalPrice = p1 + p2 +p3;
+	document.getElementById("totalprice").value=totalPrice;
+	}
+</script>
+
+</form>
+</body>
+</html>

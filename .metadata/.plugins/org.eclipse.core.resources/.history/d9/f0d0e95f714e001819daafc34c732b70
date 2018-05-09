@@ -1,0 +1,21 @@
+$(document).ready(function(){
+	$('button:submit').submit(function(){
+		if(('input[name=pass]').val() == ""){
+			alert('비밀번호를 입력하세요');
+			$(this).focus();
+		
+		}
+	});
+		
+	
+	
+	$('input[name=id]').keyup(function(){
+		eng = /[^a-z|^A-Z]/g;
+		v = $(this).val();
+		if(eng.test(v)){
+			alert("한글만 입력가능합니다.");
+			$(this).val(v.replace(eng,''));
+		}
+			}
+		});
+	});

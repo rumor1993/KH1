@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		//변수 선언
+		//컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+		//var today = new Date(2018,3,11,9,0,0);
+		var today = new Date();
+		today.setHours(9,0,0);//9시 0분 0초
+		var answer = prompt("비교할 날짜를 입력하세요.","2018-04-05");
+		//날짜 형식의 string을 이용해서 날짜를 설정한다.
+		var before = new Date(answer);
+		
+		document.write(today.toString() + "<br>");
+		document.write(before.toString() + "<br>");
+		
+		var interval = ((today.getTime()/86400000) - (before.getTime()/86400000));
+		alert("날짜의 간격은 " + Math.ceil(Math.abs(interval))+ "일 입니다.")
+		</script>
+</body>
+</html>

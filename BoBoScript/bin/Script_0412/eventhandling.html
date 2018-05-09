@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Event Handling : 모든 브라우저 작동</title>
+</head>
+	<script>
+		function add(){
+			result.value=parseInt(op1.value)+parseInt(op2.value);
+		}
+		
+	</script>
+<body>
+	<form>
+		<input id="op1" type="text" size="2"> +
+		<input id="op2" type="text" size="2">
+		<input type="button" value="=" onclick="add();">
+		<input id="result" type="text" size="2">
+	</form>
+	
+</body>
+</html>

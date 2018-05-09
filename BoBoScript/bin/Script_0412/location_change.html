@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이동</title>
+
+	<script>
+		function load(){
+			window.location.href=site.value;
+		}
+		
+	</script>
+</head>
+<body>
+	<h1>window.location으로 웹 사이트 접속</h1>
+	<hr>
+	사이트 선택 - onchange는 선택이 변경된 후에 작동합니다.
+	<select id="site" onchange="load()">
+		<option value="http://www.naver.com">네이버</option>
+		<option value="http://www.google.com" >구글</option>
+		<option value="http://www.daum.net">다음</option>
+	</select>
+</body>
+</html>

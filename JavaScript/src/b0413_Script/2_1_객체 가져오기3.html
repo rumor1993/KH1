@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	꽃으로 바꾸어 주세요 <br>
+	<img src = "Koala.jpg" id="flower"><!-- 이미지를 클릭하는 경우 -->
+</body>
+<script>
+		var changeflower= document.getElementById('flower');
+	function changeflowerf(){
+		changeflower.src="flower.jpg";
+		changeflower.width= 300;
+		changeflower.height = 300;
+		
+	};
+/*  
+ * 	addEventListener() 메소드 : W3C의 표준 방법으로서 DOM 객체의
+ 						addEventListener()메소드로 리스너를 등록할 수 있다.
+ 	형식) addEventListener(type,listener, useCapture)
+ 			-type : 이벤트 타입을 나타내는 문자열로 'click', 'load','keydown'
+ 					등등
+ 			-listener : 이벤트 리스너로 등록할 함수 이름
+ 			-useCapture : true 이면 이벤트 흐름 중 캡쳐 단계에서
+ 						실행될 리스너를 등록
+ 						false 이면 버블 단계에서 실행될 리스너를 등록. 생략가능
+ 	예)addEventListener('click', changflowerf);
+ */*/
+	changeflower.addEventListener('click', changeflowerf);
+</script>
+</html>

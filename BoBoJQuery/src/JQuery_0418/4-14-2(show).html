@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<style>
+		.page{display:none}	
+	</style>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!-- show()메소드 : 문서 객체를 크게 하며 보여줍니다
+	 hide()메소드 : 문서 객체를 작게 하며 사라지게 합니다.
+	 toggle(speed)메소드 : show()메소드와 hide()메소드를 번갈아 실행합니다
+	 speed : 밀리초 단위의 숫자나 문자열 slow(600밀리초), normal(400밀리초), fast(200밀리초)
+	  -->
+ 	<script>
+ 	$(document).ready(function(){
+ 		$('button').click(function(){
+ 			$('.page').show('slow');
+ 		})
+	});
+	 </script>
+	 
+</head>
+<body>
+	<button>Show</button>
+	<div class="page">
+		<h1>졸린가요?</h1>
+		<p>밤에 푹~ 주무세요</p>
+	</div>
+</body>
+</html>

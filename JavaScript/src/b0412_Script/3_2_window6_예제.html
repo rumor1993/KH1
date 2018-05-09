@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function load(){
+			var select = document.getElementById("site");
+			
+			//href는 생략가능
+			window.location.href = select.value;
+		}
+			
+		
+	</script>
+	
+</head>
+<body>
+	<h1>window.location으로 웹사이트 접속</h1>
+	<hr>
+	사이트 선택
+	<select id ="site" onchange="load()">
+		<option value="http://www.naver.com">네이버</option>
+		<option value="http://www.google.com" selected>구글</option>
+		<option value="http://www.daum.net">다음</option>
+	</select>
+</body>
+</html>

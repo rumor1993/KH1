@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display : none(화면에 보이지 않게 만듭니다.)</title>
+</head>
+	<style>
+		div:hover +span{display:block;}
+
+		span{	
+				display:none;
+				background-color:pink;
+				text-align:center;
+				width:500px;		
+				height:100px;					
+			}
+	</style>	
+<body>
+	<div>여기에 커서를 갖다 놓으세요</div>
+	<span>나는 보여요</span>
+</body>
+</html>

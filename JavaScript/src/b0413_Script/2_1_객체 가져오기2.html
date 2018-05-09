@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	꽃으로 바꾸어 주세요 <br>
+	<img src = "Koala.jpg" id="flower"><!-- 이미지를 클릭하는 경우 -->
+</body>
+<script>
+		var changeflower= document.getElementById('flower');
+	function changeflowerf(){
+		changeflower.src="flower.jpg";
+		changeflower.width= 300;
+		changeflower.height = 300;
+		
+	};
+	//이벤트 속성에 이벤트 핸들ㄹ러 함수 등록
+	//이벤트 등록시 이벤트 핸들러 함수의 이름만 적고 ()는 붙이지 않는다.
+	changeflower.onclick = changeflowerf;
+</script>
+</html>

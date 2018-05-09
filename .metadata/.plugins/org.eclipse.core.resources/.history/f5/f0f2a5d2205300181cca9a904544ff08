@@ -1,0 +1,27 @@
+package ch12;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import ch12.db.Member;
+import ch12.db.MemberDAO;
+
+public class joinProcessAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ActionForward forward = new ActionForward();
+		MemberDAO mdao = new MemberDAO();
+		Member m = new Member();
+
+		
+		m.setId(request.getParameter("id"));
+		m.setPassword(request.getParameter("pass"));
+		m.setName(request.getParameter("Name"));
+		m.set
+		
+		mdao.member_insert(m);
+		return null;
+	}
+
+}

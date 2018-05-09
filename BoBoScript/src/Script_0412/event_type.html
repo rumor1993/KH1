@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Event Handling : 모든 브라우저 작동</title>
+</head>
+<!-- 이벤트 객체의 속성과 메소드
+	1. type : 현재 발생한 이벤트의 종류를 나타내는 문자열
+	2. target : 이벤트를 발생시킨 객체(태그)
+	3. currentTarget : 현재 이벤트 리스너를 실행하고 있는 DOM객체
+	4. preventDefault() : 이벤트의 디폴트 행동을 취소시키는 메소드 -->
+	<script>
+		function myEvent(e){
+			var message = "이벤트 종류는" +e.type + "입니다.\n";
+		message += "이벤트를 발생시킨 객체(태그)는 " + e.target.tagName + "\n";
+		message += "현재 이벤트를 실행하고 있는 객체는 " +e.currentTarget.tagName+"\n";
+			alert(message);
+		}
+	</script>
+<body>
+	<input type ="button" value="버튼" onclick="myEvent(event)">
+</body>
+</html>

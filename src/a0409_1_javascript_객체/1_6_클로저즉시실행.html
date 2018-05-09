@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <title>Using Objects</title>
+	<script>
+		var saram = new Object();
+		var sum = 0;
+	    
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+		
+		saram.print = function (){
+        	   for(var p in saram){
+				if(typeof(saram[p])!="function")
+        		   document.write(p+ "=" +  saram[p] + "<br>");
+        	   }
+           }
+		
+		saram.add = function(){
+			var sum = 0;
+			return function(){
+			return sum++;};
+
+		}
+		(); //즉시실행 하는법..
+		
+   	saram.print();
+   	
+   	var result = saram.add();
+   document.write(result + "<br>");
+	var result = saram.add();
+	document.write(result + "<br>");
+	var result = saram.add();
+	document.write(result + "<br>");
+	var result = saram.add();
+	document.write(result + "<br>");
+      
+	</script>
+ </head>
+ <body>
+
+	
+ </body>
+</html>
+
+
+
+
+

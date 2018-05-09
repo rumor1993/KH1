@@ -1,0 +1,15 @@
+package ch12;
+
+import javax.mail.Session;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Member_updateAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String id = (String)request.getSession();
+		return null;
+	}
+
+}

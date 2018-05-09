@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	legend{text-align:center;color:#d192dc;}
+	fieldset{padding:30px;position: absolute;
+		left : 450px;top : 20px; 
+		border:medium solid #9c27b0;
+		border-radius:5%
+		}
+	#name1{border:medium solid #d192dc; width:200px;height:20px;
+			border-radius:10%;margin:auto;}
+	#name2{border:medium solid #d192dc; width:200px;height:20px;
+			border-radius:10%;margin:auto;}
+	#email{border:medium solid #d192dc; width:413px;height:20px;
+			border-radius:10%;margin:auto;}
+	#pass{border:medium solid #d192dc; width:413px;height:20px;
+			border-radius:10%;margin:auto;}
+	
+	#pass2{border:medium solid #d192dc; width:413px;height:20px;
+			border-radius:10%;margin:auto;}
+	#month{border:medium solid #d192dc; width:130px;height:20px;
+			border-radius:10%;margin:auto;}
+	#day{border:medium solid #d192dc; width:130px;height:20px;
+			border-radius:10%;margin:auto;}
+	#year{border:medium solid #d192dc; width:130px;height:20px;
+			border-radius:10%;margin:auto;}
+	#box{background-color:#d192dc;width:416px; height:40px;
+		 border:medium solid #d192dc;border-radius:10%;margin:auto;
+		 font-weight: normal;font-size:large;color: white;
+		 }
+</style>
+</head>
+<body>
+	<form method="get" action="result.html">
+	<fieldset>
+		<legend><h3>입력폼</h3></legend>
+		<input id="name1" type="text" name="id"	placeholder="성" required>
+		<input id="name2" type="text" name="hoho" placeholder="이름" required><br><br>
+		<input id="email" type="email" name="ho" placeholder="Email" required><br><br>
+		<input id="pass" type="password" name="hohoho" placeholder="패스워드"	required><br><br>
+		<input id="pass2" type="password" name="hoh" placeholder="패스워드 확인" required><br><br>
+		<input id="month" type ="number" min="1" max="12" step="1" placeholder="월">
+		<input id="day" type ="number" min="1" max="31" step="1" placeholder="일">
+		<input id="year" type ="number" min="2010" max="2020" step="1" placeholder="년도"><br><br>
+		성별:
+		<label for= "male">남성</label>
+		<input type="radio" name = "gender" id ="male"
+				value = "male" checked>
+		<label for="female">여성 </laber>
+		<input = type = "radio"	name ="gender" id = "female"
+				value = "female"><br><br><br>
+		 				
+		<input id="box" type="submit" value="회 원 가 입">
+	</fieldset>
+	</form>
+	
+</body>
+</html>

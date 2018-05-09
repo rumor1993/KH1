@@ -1,0 +1,35 @@
+package ch12;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import ch12.db.Member;
+import ch12.db.MemberDAO;
+
+public class Member_updateProcessAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ActionForward forward = new ActionForward();
+		MemberDAO mdao = new MemberDAO();
+		Member m = new Member();
+		int result = mdao.member_update(m);
+		 response.setContentType("text/html;charset=UTF-8");
+         PrintWriter out = response.getWriter();
+         
+         if(result==1) {
+	         mdao.member_delete(id);
+	         forward.setPath("./ch11/Member/main.jsp");
+	         forward.setRedirect(false);
+         }
+		
+		forward.setPath("./ch11/Member/main.jsp");
+		forward.setRedirect(false);
+	
+		
+		return forward;
+	}
+
+}

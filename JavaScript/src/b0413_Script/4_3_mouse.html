@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var width=1;
+	function down(){
+		this.style.fontStyle='italic';
+		this.style.color='red';
+	}
+	
+	function up(){
+		
+		this.style.color='green';
+	}
+	
+	function over(){
+		
+		this.style.borderColor = "violet";
+	}
+	
+	function out(){
+		
+		this.style.borderColor = "lightgray";
+	}
+	
+	function wheel(){
+		//wheelDelta 속성을 통해 사용자가 휠을 어느 방향으로 굴렷는지 알 수 있습니다.
+		//위쪽으로 움직이면 120, 아래쪽으로 움직이면 -120의 값을 갖습니다.
+		if(event.wheelDelta < 0){
+			width--;
+			if(width <0){
+				width =0;
+			}
+		}else{
+			width++;
+		}
+		this.style.borderStyle = "ridge";
+		this.style.borderWidth = width + "px";
+		
+	}
+	
+	
+	
+	
+	window.onload = function (){
+		var spanT = document.getElementsByTagName("span");
+		spanT[0].addEventListener('mousedown', down);//HTML태그에 마우스 버튼을 누르는 순간
+		spanT[0].addEventListener('mouseup', up);//눌려진마우스버튼 놓는 순간
+		spanT[0].addEventListener('mouseover', over);//마우스가 HTML 태그 위로 올라오는 순간
+		spanT[0].addEventListener('mouseout', out);//마우스가 HTML 태그를 벗어 나는 순간
+		spanT[0].addEventListener('wheel', wheel);//HTML 태그에 마우스
+	}
+</script>
+</head>
+<body>
+	<h3>마우스 관련 이벤트 리스너</h3>
+	<hr>
+	<div>마우스관련<span>이벤트</span>가 발생합니다.</div>
+</body>
+</html>

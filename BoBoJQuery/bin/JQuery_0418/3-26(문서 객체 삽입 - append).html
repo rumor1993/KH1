@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- 문서 객체 삽입
+		$(A).append(B) : B를 A의 뒷부분에 추가합니다.
+		$(A).prepend(B) : B를 A의 앞부분에 추가합니다.
+	형식) $(selector).append(content, content,...);
+	 	 $(selector).append(function(index){}); -->
+	 <script>
+	 	$(document).ready(function(){
+	 		var h1 = '<h1>오늘은</h1>';
+	 		var h2 = '<h1>기다리던</h1>';
+	 		var h3 = '<h1>금요일</h1>';
+	 		var h4 = '<h1>드디어</h1>';
+	 		var h5 = '<h1>수요일</h1>';
+	 		//div 태그의 마지막 자식에 추가합니다.
+	 		$('div').append(h1,h2,h1,h2);
+	 		//h3을 div 태그의 맨 처음 자식에 추가합니다.
+	 		$('div').prepend(h3);
+	 		//div태그의 바로 다음 형제 노드로 추가
+	 		$('div').after(h4);
+	 		//div태그의 바로 이전 형제 노드로 추가
+	 		$('div').before(h5);
+	 	});
+	 </script>
+</head>
+<body>
+	<div>내 뒤에 붙거라</div>
+</body>
+</html>

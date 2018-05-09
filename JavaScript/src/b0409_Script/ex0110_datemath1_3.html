@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <script type="text/javascript">
+   var sum = 0;
+   var t1 = new Date().getTime();
+   for (var i = 1; i <= 1000000; i++) {
+	   sum += i;
+   }
+   var t2 = new Date().getTime();
+   document.write("sum = " + sum + "<br>");
+   document.write("1에서 1000000까지 더하는데 걸린 시간: " + (t2-t1) + "ms");
+   
+   document.write("<hr>");
+   
+   var sum = 0;
+   console.time("calculatingTime")
+   for (var i = 1; i <= 1000000; i++) {
+	   sum += i;
+   }
+   var et = new Date().getTime();
+   console.timeEnd('calculatingTime');
+  </script>
+</body>
+</html>

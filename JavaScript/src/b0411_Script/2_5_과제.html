@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>DOM Access</title>
+   <meta charset="UTF-8">
+   <script>
+     window.onclick = function(){
+		//input의 값을 alert으로 보여줍니다.
+		alert( name1);
+	    var name1 = document.getElementById('username')	;
+                // prompt를 이용해서 이름을 입력받습니다.
+        var name = prompt("이름을 임력하세요~");
+                 // 입력 받은 값을 input에 설정합니다.
+		name1.value=(name);
+		//글자색 - 빨강색
+		name1.style.color='red';
+        //바탕색 - 노랑
+		name1.style.backgroundColor='yellow';
+        //가로 - 200px
+		name1.style.width='200px';
+        //세로 - 50px
+		name1.style.height='50px';
+
+        //글자 크기 - 30px
+		name1.style.fontSize='30px';
+     }
+	</script>
+</head>
+<body>
+	
+		이름 : <input id="username" type="text"  value="사용자의 이름 :F반" />
+</body>	
+</html>

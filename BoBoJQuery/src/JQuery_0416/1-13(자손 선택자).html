@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script>
+	<!-- 두 가지 클래스를 모두 가지는 태그 -->
+		$(document).ready(function(){
+			$('ul>li').css('color','red');
+			$('li:first-child').css('color','black');
+			$('ul>li+li+li').css('color' , 'blue');
+		}
+		);
+	</script>
+</head>
+<body>
+<!-- 
+	1. A E - A요소에 포함되어 있는 요소 중 E 요소를 선택한다.(후손요소)
+	2. A>E - A요소의 바로 아래에 포함되어 있는 E요소를 선택한다.(자식 요소)
+	3. A+E - A요소의 다음으로 나오는 E요소를 선택한다.(형제요소)
+ -->
+ <div>
+	<ul>
+		<li>Cat</li>
+		<li>Dog</li>
+		<li>Elephant</li>
+	</ul>
+</div>
+<div>
+	<p>하하 저는 적용이 안되나요?</p>
+</div>
+
+</body>
+</html>

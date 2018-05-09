@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!--  -->
+<body>
+	<script>
+	function test(name){
+		var output = 'Hello ' + name + ' ..!';
+		return function(){
+			alert(output);
+		};
+	}
+	//변수를 선언
+	var test_1 = test('Web');
+	var test_2 = test('JavaScript');
+	
+	//함수 호출
+	test_1();
+	test_2();
+	</script>
+</body>
+</html>

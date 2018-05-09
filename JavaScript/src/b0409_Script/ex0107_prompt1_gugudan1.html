@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prompt: 입력칸이 있는 대화상자(예제_구구단1)</title>
+</head>
+<body>
+  <script>
+    /* prompt()함수는 문자열만 입력받을 수 있습니다.
+            형식 result = prompt(message, value)
+       ● result는 사용자가 입력한 텍스트가 포함된 문자열이거나
+         null(취소인 경우)입니다.
+       ● message는 사용자에게 표시할 텍스트 문자열입니다.
+                이 매개 변수는 선택적이며 프롬프트 창에 표시 할 내용이 없으면 색략할 수 있습니다.
+       ● value는 텍스트 입력 필드에 표시되는 기본값을 포함하는 문자열입니다.
+     */
+       var dan = prompt("단을 입력하세요.");
+       dan = dan.trim(); //공백을 없애줍니다.
+
+       if (dan) {
+    	   document.write("입력 단 = " + dan + "<br>");
+    	   for (var i = 1; i <= 9; i++)
+    		   document.write(dan + '*' + i + '=' + i * dan + '<br>');
+       }else{
+    	   alert('데이터를 입력하세요');
+       }
+  </script>
+</body>
+</html>

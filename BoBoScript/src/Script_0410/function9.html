@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- 실행 안된 :함수안에서 var로 사용된 변수는 지역 변수로 함수 외부에서 사용할 수 없다.
+			단, 함수안에서 var를 생략하면 전역 변수로 취급한다. 
+			함수 밖에서 선언된 변수는 var가 있든 없든 모두 전역 변수로 취급한다.
+			 -->
+<body>
+	<script>
+	/* 	function test(name){
+			var output = 'Hello ' + name + ' ..!';
+		} */
+		
+		function test(name){
+			output = 'Hello ' + name + ' ..!';
+		}
+		
+		test('자바스크립트');
+		alert(output);
+		
+	</script>
+</body>
+</html>

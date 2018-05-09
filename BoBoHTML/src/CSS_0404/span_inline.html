@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>inline 요소 : span</title>
+</head>
+<!-- 박스 유형 3가지
+	1. display : block
+	2. display : inline
+	3. display : inline-block
+	
+	span은 display:inline 스타일로 width, height 크기 조절이 불가능 합니다.
+	margin-top과 margin-bottom 조절이 불가능 합니다.
+	inline 속성인 새 라인에서 시작하지 못하고 옆에 다른 요소 배치 가능합니다. -->
+	<style>
+		span{	
+				background-color:pink;
+				width:500px;		/*적용 안됨*/
+				height:100px;		/*적용 안됨*/
+				text-align:center;	/*적용 안됨*/
+				margin-right:20px}
+	</style>	
+<body>
+	<span>display속성의 inline은 줄바꿈이 되지 않고 width, height적용 안되요</span>
+	<strong>제가 어디에 있나요?</strong>
+</body>
+</html>

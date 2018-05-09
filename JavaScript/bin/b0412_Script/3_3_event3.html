@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	*{box-sizing:border-box;}
+	fieldset{width:500px;margin:0 auto;}
+	form{text-align:center;}
+	input{border-radius:3px;
+		  border:2px solid green;
+		  }
+	input[type="submit"]{background-color:green;}
+</style>
+</head>
+<body>
+	<fieldset>
+		<legend>회원 가입 폼</legend>
+		<form id ="my-form" action ="3_3_event.html">
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name"><br>
+			
+			<label for="pass">비밀번호</label>
+			<input type="password" name="pass" id="pass"><br>
+			
+			
+			<label for="pass-check">비밀번호 확인</label>
+			<input type="password" id="pass-check"><br>
+			
+			<input type="submit" value="제출">			
+		</form>
+	</fieldset>
+</body>
+</html>

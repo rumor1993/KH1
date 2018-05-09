@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+<!-- JQuery 입력 양식 필터 선택자(2)
+	요소 : checked(체크되어 있는 입력 양식을 선택합니다.
+	요소 : disabled(비활성화된 입력 양식을 선택합니다.
+	요소 : enabled(활성화된 입력 양식을 선택합니다.)
+	요소 : focus(초점이 맞추어져 있는 입력 양식을 선택합니다.
+	요소 : selected(option 객체 중 선택된 태그를 선택합니다.)
+	select > option:selected : select자손인 option 태그 중에서 사용자가 선택한 태그 선택합니다. -->
+	<script>
+		$(document).ready(function(){
+			 setTimeout(function() {
+				var a = $('input:checked').val();
+				alert(a);	
+				$('img').attr('src',a);
+		 		}, 3000);
+		});
+	</script>
+</head>
+<body>
+<h3>선택한 그림 출력</h3>
+<hr>
+라디오 버튼을 클릭하면 이미지가 바뀝니다.<br>
+<input type="radio" name="icon" value='../imgae/image1.png'>image1<br>
+<input type="radio" name="icon" value='../imgae/image2.png'>image2<br>
+<input type="radio" name="icon" value='../imgae/image3.png'>image3<br>
+<img src='../image/image3.png' id="iconImg">
+</body>
+</html>

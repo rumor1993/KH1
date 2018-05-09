@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!--  -->
+	 <script>
+	 	$(document).ready(function(){
+	 		$('img').css('width',200);
+	 		/* setInterval(function(){
+	 			$('img:last-child').after($('img:first-child'));
+	 			},2000); */
+	 		/* setInterval(function(){
+	 			$('body').append($('img:first'));
+	 		},500); */
+	 		setInterval(function(){
+	 			$('img').first().appendTo('body');
+	 		},1000);	 		
+	 	});
+	 </script>
+</head>
+<body>
+	<img src = "../image/bono.jpg">
+	<img src = "../image/Desert.jpg">
+	<img src = "../image/koala.jpg">
+	<img src = "../image/flower.jpg">
+</body>
+</html>

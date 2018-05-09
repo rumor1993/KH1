@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 테스트</title>
+</head>
+<body>
+	<h3> 다양한 입력 폼</h3>
+	
+	<form method="get" action="result.html">
+	성명 : <input type = "text" name="id"><br>
+	성별 : <input type = "radio" name="jender" value="남성" checked>남성
+		 <input type = "radio" name="jender" value="여성">여성<br>
+	과목 : <select name = "subject" size ="1">
+			<option value="java" selected>자바</option>
+			<option value="css">CSS</option>
+			<option value="html">HTML</option>
+			<option value="jsp">JSP</option>
+			
+			
+			</select>
+	
+	<p>	 
+	구입희망분야(복수선택가능)<br>
+	- 분야:  <input type = "checkbox" name="purchase" value="computer">컴퓨터
+			 <input type = "checkbox" name="purchase" value="economy">경제
+			  <input type = "checkbox" name="purchase" value="sense">상식
+	</p>
+			  
+	<p>
+	비고 : <br>
+	<textarea name="comment" cols="40" rows="5"></textarea><br>
+	</p>
+	파일 업로드하기
+	<p>
+	
+	<input type = "file" name="myfile"></p>
+	<hr>
+	<input type = "submit" value="전송">
+	<input type = "reset" value="취소">
+	
+	
+	</form>
+</body>
+</html>

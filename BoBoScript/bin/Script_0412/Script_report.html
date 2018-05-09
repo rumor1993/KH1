@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+	<script>
+		function sum(){
+			var p = document.getElementsByClassName('price');
+			var arr = p[0].innerHTML.split(/,|원/);
+			var num = arr[0]+arr[1];
+			
+			pr1.value=num*parseInt(t1.value);
+			pr2.value=27000*parseInt(t2.value);
+			pr3.value=25000*parseInt(t3.value);
+			tsum.value=parseInt(t1.value)+parseInt(t2.value)+parseInt(t3.value);
+			prsum.value=parseInt(pr1.value)+parseInt(pr2.value)+parseInt(pr3.value);
+			
+			
+		}
+		/*var prices = document.getElementsByClassName('price');
+			var price = [0,0,0];
+			for(var i=0; i<prices.length; i++){
+				price[i] = prices[i].innerHTML.replace(",","");
+				price[i] = price[i].replace("원","");
+			}
+			
+		위 두 문장과 같은 의미의 패턴
+		1. / /
+		2. ,|원 => , 또는 원
+		3. g:모든영역, i:대소문자 구분없이
+		
+		price[i] = prices[i].innerHTML.replace(/,|원/g,"");
+		*/
+		function load(){
+			var p = document.getElementsByClassName('price');
+			var arr = p[0].innerHTML.split(/,|원/);
+			var num = arr[0]+arr[1];
+			
+			pr1.value=num*parseInt(t1.value);
+			pr2.value=27000*parseInt(t2.value);
+			pr3.value=25000*parseInt(t3.value);
+			tsum.value=parseInt(t1.value)+parseInt(t2.value)+parseInt(t3.value);
+			prsum.value=parseInt(pr1.value)+parseInt(pr2.value)+parseInt(pr3.value);
+		}
+		/*
+			var n1 = document.form01.book1.value; //name으로 쓴 식
+		*/
+		
+		
+		
+
+	</script>
+	<style>
+	
+		*{text-align:center}
+		table{width:500px; margin:0 auto}
+		#text{background-color:yellow}
+		
+		#green{background-color:green}
+		tr:last-child>td:first-cjild{background-color:red}
+		
+	</style>
+<body>
+	<h1>서적 주문 양식</h1>
+	<form action="문서 객체 제거.html" method="get" oninput="load();">
+	<table border=1>
+		<tr>
+			<th>책 제목</th>
+			<th>가격</th>
+			<th>수량</th>
+			<th>합계</th>
+		</tr>
+		<!-- 이벤트 핸들러를 직접 기술하여 등록방식
+			this.select()는 가 -->
+		<tr>
+			<td id="text">4차 산업</td>
+			<td  class="price">50,000원</td>
+			<td><input id="t1" type="text" name="t1" 
+			size="2" onclick="this.select();"></td>
+			<td><input class="price" id="pr1" type="text" name="pr1" size="4">원</td>
+		</tr>
+		<tr>
+			<td id="text">다이어트</td>
+			<td>27,000원</td>
+			<td><input id="t2" type="text" name="t2" size="2"
+			 onclick="this.select();"></td>
+			<td><input id="pr2" type="text" name="pr2" size="4">원</td>
+		</tr>
+		<tr>
+			<td id="text">윤식당</td>
+			<td >25,000원</td>
+			<td><input  id="t3" type="text" name="t3" size="2" 
+			onclick="this.select();"></td>
+			<td><input id="pr3" type="text" name="pr3" size="4">원</td>
+		</tr>
+		<tr>
+			<td>합계</td>
+			<td id="green"></td>
+			<td id="green"><input id="tsum" type="text" name="tsum" size="2"></td>
+			<td id="green"><input id="prsum" type="text" name="prsum" size="4">원</td>
+		</tr>
+	</table>
+	<div><input type="button" value="합계계산" onclick="sum();">
+	<input type="reset" >
+	<input type="submit" value="제출"></div>
+</form>
+</body>
+</html>

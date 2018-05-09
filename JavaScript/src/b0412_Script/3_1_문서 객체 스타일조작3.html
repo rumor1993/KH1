@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		#after{
+				border : 2px solid black;
+				color : orange;
+				font-family : helveteca;
+				background-color : red;
+				}
+	</style>
+</head>
+<body>
+	<h1 class = "header">Header</h1>
+</body>
+	<script>
+		var h = document.getElementsByClassName('header');
+		function change() {
+		
+			h[0].setAttribute("id","after");
+		}
+		h[0].onclick=change;
+	</script>
+</html>

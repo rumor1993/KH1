@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- return 키워드는 함수가 실행하는 도중에 함수를 호출한 곳으로 돌아가라는 의미이다.
+	 return 키워드를 사요하면 값을 지정하지 않아도 함수를 호출한 곳으로 돌아간다. -->
+<body>
+	<script>
+		//함수 정의(선언)
+		function returnFunction(){
+			alert('문장A');
+			return;//아무값도 리턴하지 않고 호출한 곳으로 돌아간다.
+		}
+		var output = returnFunction();//output에는 돌려받은 값이 없다.
+		alert(typeof (output) + ' : ' + output);
+		
+	</script>
+</body>
+</html>

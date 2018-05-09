@@ -1,0 +1,33 @@
+package ch12;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import ch12.db.Member;
+import ch12.db.MemberDAO;
+
+public class Member_deleteAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			request.setCharacterEncoding("euc-kr");
+			String id = request.getParameter("id");
+			ActionForward forward = new ActionForward();
+			MemberDAO mdao = new MemberDAO();
+			int result = mdao.member_delete(id);
+			
+			if(result != 0) {
+				// 삭제성공
+				forward.setPath("./ch11/Member/delete.jsp");
+				forward.setRedirect(false);
+				return forward;
+			}else {
+							
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

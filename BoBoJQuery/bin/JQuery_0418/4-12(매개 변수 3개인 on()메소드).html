@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!--  -->
+ 	<script>
+ 	$(document).ready(function(){
+ 		//상위 태그에 이벤트를 연결하고 h1 태그를 클릭했을 때의 방식으로
+ 		$('#wrap').on('click','h1',function(){
+ 			var length = $('h1').length; // h1 태그의 갯수
+ 			var targetHTML = $(this).html();//
+ 			$('#wrap').append('<h1>' + length + ' - ' + targetHTML+'</h1>');
+ 		});
+	});
+	 </script>
+	 
+</head>
+<body>
+	<div id="wrap">
+		<h1>Header1</h1>
+	</div>
+</body>
+</html>

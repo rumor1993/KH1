@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>너부리야</title>
+</head>
+	
+<body>
+	보노보노로 바꾸어 주세요<br>
+	<img src="koala.jpg" id ="flower" >
+	<!-- 이미지를 클릭하는경우 -->
+</body>
+<script>
+var changeflower = document.getElementById('flower');
+		function changeflowerf(){
+			
+			changeflower.src = 'image.jpg';
+			changeflower.width=500;
+			changeflower.height=500;
+		};
+		//이벤트 속성에 이벤트 핸들러 함수 등록
+		//이벤트 등록시 이벤트 핸들러 함수의 이름만 적고 ()는 붙이지 않는다.
+		changeflower.onclick = changeflowerf;
+	</script>
+</html>

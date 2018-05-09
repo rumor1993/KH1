@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!-- -->
+ 	<script>
+ 	$(document).ready(function(){
+ 		/*a태그를 선택하면 부모 노드 h1에도 영향을 미쳐 배경색이 빨간색으로 변합니다
+ 		    즉, a태그 선택시 h1태그의 이벤트가 전달 됩니다.
+ 		  자식->부모 이벤트 전달을 이벤트 버블링(event bubbling)이라고
+ 		  jquery는 이벤트 버블링을 사용하는 방식으로 설계되었습니다.
+ 		*/
+ 		
+		$('a').click(function(event){
+			$(this).css('background-color','blue');
+			//a태그를 클릭하면 이벤트 전달이 일어나지 않습니다.
+			event.stopPropagation();//a태그 선택시 h1태그의 이벤트 전달이 발생하지 않는다.
+			event.preventDefault();//a태그 기본 이벤트 제거 합니다
+									//즉, 이동이 죄디 않습니다.
+		});
+		$('h1').click(function(event){
+			$(this).css('background-color','red');
+		});
+	});
+	 </script>
+	 
+</head>
+<body>
+	<h1>
+		<a href="http://www.naver.com">Naver</a>h1태그
+	</h1>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <title>Using Objects</title>
+ </head>
+ 	<style>
+ 	table{margin:0 auto; width:400px;
+		 text-align:center;border-collapse: collapse; border-color:pink}
+	caption{color : green; font-size:30pt}
+	th{background-color : violet}
+ 	</style>
+ <body>
+	<script>
+	 	   
+		var saram = new Object();//사용자 정의 객체 생성
+    
+		//생성된 객체에 속성 추가하기
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+           //채우기
+        document.write("<table border=1>");
+		document.write("<caption> 신상 정보</caption>");
+		document.write("<tr><th>항목(속성:property)</th>");
+		document.write("<th>내용 (값:value)</th></tr>")
+			
+		for(var p in saram){
+				document.write("<tr>");
+				document.write(" <td> saram." + p + "</td>");
+				document.write("<td> " +saram[p]);
+				if(p == "blood"){
+					document.write("형");
+				}else if(p == "ki"){
+					document.write("cm");
+				}else if(p == "age"){
+					document.write("세");
+				}
+				document.write("</td></tr>");
+		}
+		document.write("</table>");
+
+	</script>
+ </body>
+</html>

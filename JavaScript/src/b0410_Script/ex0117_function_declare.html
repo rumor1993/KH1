@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+		-선언적 함수로 생성하는 함수 : 이름이 있는 함수(위체에 상관없어요)
+			function 함수이름(){
+			코드들
+			}
+			
+		- 선언적 함수의 호출방점
+			함수이름();
+			
+		- 선언적 함수 즉, 이름이 있는 함수인 경우에는 웹 브라우저에서
+			스크립트 영역을 처리할 때 script 태그내부의 내용을 읽기 전에
+			선언적 함수 부터 읽어 들인다.
+			함수 호출부분이 함수 생성 전에 사용해도된다.
+		 -->
+<script >
+	//함수 선언 또는 함수정의
+	function first(){
+		var output = prompt('숫자를 입력하세요','숫자');
+		alert("입력한 숫자 =" +output);
+		}
+
+	//함수 호출
+	first();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

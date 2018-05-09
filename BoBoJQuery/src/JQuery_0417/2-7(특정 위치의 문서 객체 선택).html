@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+	<!-- 특정 위치의 문서 객체 선택
+		eq() : 특정 위치에 존재하는 문서 객체를 선택합니다.
+		first(): 첫 번째 위치하는 문서 객체를 선택합니다.
+		last() : 마지막에 위치하는 문서 객체를 선택합니다. -->
+	<script>
+		$(document).ready(function(){
+			$('h3').eq(0).css('background','orange');
+			$('h3').eq(1).css('background','pink');
+			//eq()메소드의 매개 변수가 음수인 경우는 뒤쪽을 기준으로 선택합니다.
+			$('h3').eq(-1).css('background','red');
+		});
+						
+	</script>
+</head>
+<body>
+	<h3>Header-0</h3>
+	<h3>Header-1</h3>
+	<h3>Header-2</h3>
+	<h3>Header-3</h3>
+	<h3>Header-4</h3>
+	<h3>Header-5</h3>	
+</body>
+</html>

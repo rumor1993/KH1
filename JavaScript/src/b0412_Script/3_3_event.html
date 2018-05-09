@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	function add(){
+		var a =document.getElementById("op1").value;
+		var b =document.getElementById("op2").value;
+		var sum = document.getElementById("result");
+		sum.value = parseInt(a) + parseInt(b);
+		sum.style.backgroundColor='orange';
+		
+	}
+</script>
+
+<form>
+	<input id="op1" type="text" size="2">+
+	<input id="op2" type="text" size="2">
+	<input type="button" value="=" onclick="add();">
+	<input id="result" type="text" size="2">
+</form>
+</body>
+</html>

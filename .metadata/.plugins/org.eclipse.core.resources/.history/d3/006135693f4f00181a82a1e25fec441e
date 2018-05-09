@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%-- fmt: 국제화/형식화의 기능을 제공해 주는 JSTL 라이브러리 입니다.
+	fmt 라이브러리를 등록하는 코드 입니다. --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSTL fmt 라이브러리 예제3</title>
+</head>
+<body>
+	<%-- <fmt:formatNumber> : 숫자 형식의 패턴을 설정 할 때 사용합니다. --%>
+</body>
+</html>

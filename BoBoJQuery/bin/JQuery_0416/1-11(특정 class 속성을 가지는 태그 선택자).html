@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script>
+	<!-- 특정 id속성을 가지는 태그 -->
+		$(document).ready(function(){
+			$('.item').css('color','orange');
+			//h1 태그내 클래스가 item인 경우 선택
+			$('h1.item').css('background','red');
+		}
+		);
+	</script>
+</head>
+<body>
+	<h2 class="item">Header-0</h2>
+	<h1 class="item select">Header-1</h1>
+	<h1 class="item">Header-2</h1>
+</body>
+</html>

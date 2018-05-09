@@ -1,0 +1,5 @@
+$(document).ready(function(){
+	$('button:submit').submit(function(){
+		if(('input[name=id]').val() == "")
+	});
+});

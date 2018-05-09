@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 문서 객체의 내부 추가 - html() 메소드
+	매개변수에 콜백함수 사용 예 -->
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('h1').html(function(index,item){
+				return '★' +  item + index + '★';
+			})
+		});
+	</script>
+</head>
+<body>
+		<h1>월요일</h1>
+		<h1>화요일</h1>
+		<h1>수요일</h1>
+		
+</body>
+</html>

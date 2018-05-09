@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>비빔국수 재료</h3>
+	<hr>
+	<script>
+	var itemlist=['국수' , '계란' , '고추장', '김치', '오이'];
+	var output = '<ul><li>' + itemlist[0] +'<li>'	
+	output += '<li>' + itemlist[1] +'<li>'
+	output += '<li>' + itemlist[2] +'<li>'
+	output += '<li>' + itemlist[3] +'<li>'
+	output += '<li>' + itemlist[4] +'<li>'
+	output += '<li>' + itemlist[5] +'<li><ul><hr>'
+	document.write( output);
+	
+	
+	 itemlist=['국수' , '계란' , '고추장', '김치', '오이'];
+	 output = '<ul>';
+		
+		for( var i = 0 ; i< itemlist.length; i++)
+		 output += '<li>' + itemlist[i] + '</li>';
+		output+= '</ul>'
+		document.write( output);
+	</script>
+</body>
+</html>

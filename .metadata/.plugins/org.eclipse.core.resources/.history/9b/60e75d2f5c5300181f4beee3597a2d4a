@@ -1,0 +1,88 @@
+package net.board.db;
+
+import java.util.Date;
+
+public class BoardBean {
+
+	private int BOARD_NUM; 			// 글 번호
+	private String BORAD_NAME; 		// 글 이름
+	private String BORAD_PASS; 		// 글 비밀번호
+	private String BORAD_SUBJECT;	// 글 제목 
+	private String BORAD_CONTENT;	// 글 내용
+	private String BORAD_FILE;		// 첨부될 파일명
+	private int BORAD_RE_REF;		// 답변 글 작성시 참조되는 글의 번호
+	private int BORAD_RE_LEV;		// 답변 글의 깊이
+	private int BORAD_RE_SEQ;		// 답변 글의 순서
+	private int BORAD_READCONUT;	// 글의 조회수
+	private Date BORAD_DATE;			// 글의 작성 날짜
+	
+	
+	public int getBOARD_NUM() {
+		return BOARD_NUM;
+	}
+	public void setBOARD_NUM(int bOARD_NUM) {
+		BOARD_NUM = bOARD_NUM;
+	}
+	public String getBORAD_NAME() {
+		return BORAD_NAME;
+	}
+	public void setBORAD_NAME(String bORAD_NAME) {
+		BORAD_NAME = bORAD_NAME;
+	}
+	public String getBORAD_PASS() {
+		return BORAD_PASS;
+	}
+	public void setBORAD_PASS(String bORAD_PASS) {
+		BORAD_PASS = bORAD_PASS;
+	}
+	public String getBORAD_SUBJECT() {
+		return BORAD_SUBJECT;
+	}
+	public void setBORAD_SUBJECT(String bORAD_SUBJECT) {
+		BORAD_SUBJECT = bORAD_SUBJECT;
+	}
+	public String getBORAD_CONTENT() {
+		return BORAD_CONTENT;
+	}
+	public void setBORAD_CONTENT(String bORAD_CONTENT) {
+		BORAD_CONTENT = bORAD_CONTENT;
+	}
+	public String getBORAD_FILE() {
+		return BORAD_FILE;
+	}
+	public void setBORAD_FILE(String bORAD_FILE) {
+		BORAD_FILE = bORAD_FILE;
+	}
+	public int getBORAD_RE_REF() {
+		return BORAD_RE_REF;
+	}
+	public void setBORAD_RE_REF(int bORAD_RE_REF) {
+		BORAD_RE_REF = bORAD_RE_REF;
+	}
+	public int getBORAD_RE_LEV() {
+		return BORAD_RE_LEV;
+	}
+	public void setBORAD_RE_LEV(int bORAD_RE_LEV) {
+		BORAD_RE_LEV = bORAD_RE_LEV;
+	}
+	public int getBORAD_RE_SEQ() {
+		return BORAD_RE_SEQ;
+	}
+	public void setBORAD_RE_SEQ(int bORAD_RE_SEQ) {
+		BORAD_RE_SEQ = bORAD_RE_SEQ;
+	}
+	public int getBORAD_READCONUT() {
+		return BORAD_READCONUT;
+	}
+	public void setBORAD_READCONUT(int bORAD_READCONUT) {
+		BORAD_READCONUT = bORAD_READCONUT;
+	}
+	public Date getBORAD_DATE() {
+		return BORAD_DATE;
+	}
+	public void setBORAD_DATE(Date bORAD_DATE) {
+		BORAD_DATE = bORAD_DATE;
+	}
+	
+	
+}

@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%request.setCharacterEncoding("euc-kr");  %>
+ <%@ taglib prefix="c"
+ 				uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+ <head>
+ <link href="../../../css/send.css" rel="stylesheet" type="text/css">
+ <title>send2.jsp</title>
+ </head>
+
+ <body>
+	<h1> 회원 가입한 데이터</h1>
+	<table border='1'>
+		<tr>
+			<th> ID </th>
+			<td>${id }</td>
+		</tr>
+		<tr>
+			<th> 비밀번호 </th>
+			<td>${pass }</td>
+		</tr>
+		<tr>
+			<th> 주민번호 </th>
+			<td>
+				${jumin1 } -
+				${jumin2 }
+			</td>
+		</tr>
+		<tr>
+			<th> E-Mail </th>
+			<td>
+				${email } @
+				<c:choose>
+					<c:set var="sel" value="${sel }"/>
+					<c:when test="${sel==" " }"/>
+				</c:choose>
+					
+					<% if(request.getParameter("sel").equals("")){ %>
+				    <%=request.getParameter("domain")%>
+				 <%}else{				 
+				 %>   
+				     <%=request.getParameter("sel")%>
+				 <%} %>    
+			</td>
+		</tr>
+		<tr>
+			<th> 성별 </th>
+			<td>
+				<%
+					if(request.getParameter("gender").equals("man")){
+				%>
+				남자
+				<%
+					}else{
+				%>
+				여자
+				<%
+					}
+				%>
+			</td>
+		</tr>
+		<tr>
+			<th> 취미 </th>
+			<td>
+				<%
+				   String[] hobby = request.getParameterValues("hobby");
+					for(int i=0; i<hobby.length; i++){
+				%>
+					<%=hobby[i]%>&nbsp;
+				<%
+					}
+				%>
+			</td>
+		</tr>
+		<tr>
+			<th> 우편번호 </th>
+			<td><%=request.getParameter("post1") %> - <%=request.getParameter("post2") %></td>
+		</tr>
+		<tr>
+			<th> 주소 </th>
+			<td><%=request.getParameter("address") %></td>
+		</tr>
+		<tr>
+			<th> 자기소개 </th>
+			<td><%=request.getParameter("intro") %></td>
+		</tr>
+	</table>
+</body>
+</html>

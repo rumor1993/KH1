@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+	<!-- 
+		is() 메소드 : 문서 객체의 특성을 판별합니다.-->
+	<script>
+		$(document).ready(function(){
+			$('h1').each(function(){
+				//h1태그 중 select 클래스 속성이 있는 문서 객체에 스타일을 적용합니다.
+			if($(this).is(' .select')){
+				$(this).css('background','orange');
+				}
+			});
+		});
+						
+	</script>
+</head>
+<body>
+	<!-- h1 태그 중 select 클래스 속성이 있는 문서 객체에 스타일을 적용 -->
+	<h1 class="item select">Header-0</h1>
+	<h1>Header-1</h1>
+	<h1 class="select">Header-2</h1>
+	<h2 class="select">Header-3</h2>
+</body>
+</html>

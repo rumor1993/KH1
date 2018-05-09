@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 생성</title>
+<style>
+table{width:500px; height:500px; text-align: center; 
+		font-size:18pt; margin:auto; border-collapse:collapse;}
+caption{color:green; text-align: center; font-size:30pt; font-weight:border}
+
+th{background:linear-gradient(to bottom, red, orange, blue, orange, red)}
+td{background:linear-gradient(to right, white, skyblue, white)}
+td:hover{background:linear-gradient(to right, black, white, black)}
+</style>
+</head>
+<body>
+   <script>
+   var book = {
+	   title : "채식주의자",
+	   publisher : "창비",
+	   author : "한강",
+	   price : 25000,
+   };
+   book.info = {
+	   pages : 442,
+	   date : "2010년 1월 30일",
+	   ISBN10 : 8970506470,
+	   size : "188mm*254mm"
+   };
+   
+
+   list = "<table border=1>";
+   list += "<caption>서적 정보</caption>";
+   list += "<tr>";
+   list += "<th>항목 (속성: property)</th>"
+   list += "<th>내용 (값: value)</th>"
+   list += "</tr>";
+   
+   for(var a in book){
+	   if(typeof(book[a])!="object"){
+		   if(a=="price"){
+			   book[a] += "원";
+		   }
+	   list += "<tr>";
+	   list += "<td>" + "book."+ a + "</td>"
+	   list += "<td>" + book[a] + "</td>"
+	   list += "</tr>";
+	   }
+   }
+   
+   for(var a in book.info){
+	   list += "<tr>";
+	   list += "<td>" + "book.info."+ a + "</td>"
+	   list += "<td>" + book.info[a] + "</td>"
+	   list += "</tr>";
+   }
+   
+   list += "</table>";
+   document.write(list);
+   
+   
+   </script>
+</body>
+</html>

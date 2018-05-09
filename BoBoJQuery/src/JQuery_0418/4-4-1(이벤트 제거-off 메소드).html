@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- -->
+	 <script>
+	 	$(document).ready(function(){
+			$('h1').click(function(){
+				alert('이벤트가 발생했습니다.');
+				$(this).html('CLICK');	//this : 이벤트가 발생한 객체
+				//이벤트를 제거합니다
+				//click로 바뀐 곳은 클릭해도 이벤트가 발생하지 않습니다.
+				$(this).off();
+			});
+	 	
+	 	});
+	 </script>
+	 <style>
+	 	.reverse{background : black; color : white}
+	 </style>
+</head>
+<body>
+	<h1>HEADER(0)</h1>
+	<h1>HEADER(1)</h1>
+	<h1>HEADER(2)</h1>
+</body>
+</html>

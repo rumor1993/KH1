@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>control과 loop Statement</title>
+</head>
+	<style>
+	table{margin:0 auto; text-align:center}
+		th:first-child{width:100px;height:50px}
+		th:last-child{width:500px}
+		td{height:40px}
+		caption{color:green; font-size:30px}
+		tr:first-child{background-color:black; color:white}
+		tr:nth-child(2n){background-color:green}
+		tr:hover{background:orange}
+	</style>
+<body>
+	<script>
+	
+	var title1= "자바스크립트";
+	var title2= "HTML";
+	var title3= "CSS";
+	
+	var list = "<table border=1 >";
+	list += "<caption>책 주문 내용</caption>";
+	list += "<tbody>";
+	list += "<tr>";
+	list += "<th> 순번 </th>";
+	list += "<th> 제목 </th>";
+	list += "</tr>"
+	
+	var title;
+	var num	= prompt("주문할 책의 수량을 입력하세요");
+	for(var i=1; i<=num;i++){
+		var book = prompt("책의 번호를 입력하세요\n1.자바스크립트\n2.HTML\n3.CSS");
+	
+	if(book =="1"){
+		title = title1;
+	}else if(book =="2"){
+		title = title2;
+	}else if(book =="3"){
+		title = title3;
+	}else{
+		alert("리스트에 없는 책을 선택하셨습니다.");
+	//리스트에 없는 책을 선택한 경우에는 제목의 td가 없는 상태로 출력	
+	title="";
+	}	
+		list +="<tr>";
+		list +="<td>" + i + "</td>";
+		list +="<td>" + title + "</td>";
+		list +="</tr>"
+	}
+		
+	list +="</tbody></table>";	
+	
+		
+		document.body.innerHTML = list;
+	</script>
+</body>
+</html>

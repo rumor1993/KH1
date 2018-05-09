@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Control과 Loop Station</title>
+  <style>
+    table{margin:0 auto;text-align:center}
+    th:first-child{width:100px;height:50px;}
+    th:last-child{width:500px}
+    td{height:40px}
+    caption{color:green;font-size:30px}
+    tr:first-child{background:black;color:white}
+    tr:nth-child(2n){background:skyblue;}
+    tr:hover{background:orange}
+  </style>  
+</head>
+<body>
+  <script>
+	var book1 = "자바스크립트"
+	var book2 = "CSS"
+	var book3 = "HTML5"
+				    
+	var list = "<table border=1>";
+		list += "<caption> 책 주문 입력 내용 </caption>";
+		list += "<tbody><tr>";
+		list += "<th> 순번 </th> <th> 제목 </th>";
+		list += "</tr>";
+		        
+	var title;	
+    var n = prompt("주문할 책 수량을 입력하세요", "1");
+    for (var i = 0; i < n; i++) {
+    	var book_list = "1." + book1 + "\n" + "2." + book2 + "\n" + "3." + book3;
+    	var choice = prompt("책 제목을 번호로 선택하세요...\n" + book_list, "1");
+    	
+    	if (choice == "1")
+    		title = book1;
+    	else if (choice == "2")
+    		title = book2;
+    	else if (choice == "3")
+    		title = book3;
+    	else{
+    		alert("리스트에 없는 책을 선택하셨습니다.");
+    		title = "";
+    		/* 리스트에 없는 책을 선택한 경우에는 제목의 td가 빈 상태로 출력 */
+    	}
+    	list += "<tr>";
+    	list += "<td>" + (i + 1) + "</td>";
+    	list += "<td>" + title + "</td>";
+    	list += "</tr>";
+    }
+    list += "</tbody></table>";
+    
+    document.body.innerHTML = list;
+  </script>
+</html>

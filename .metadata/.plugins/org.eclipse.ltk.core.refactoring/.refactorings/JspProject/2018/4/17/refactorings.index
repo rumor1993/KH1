@@ -1,0 +1,155 @@
+1524442029433	Rename type 'send'
+1524442035823	Copy compilation unit
+1524442380544	Move compilation unit
+1524442604629	Move compilation unit
+1524442616681	Move 'report' to 'ch3'
+1524442735161	Move 'report' to 'WebContent'
+1524442757153	Copy compilation unit
+1524442767596	Rename type 'send'
+1524442773741	Rename type 'LifeCycleTest'
+1524442973980	Delete element
+1524442978706	Rename type 'send1'
+1524443032165	Rename type 'send'
+1524443036435	Rename type 'send2'
+1524443741630	Delete element
+1524444215509	Delete element
+1524444378115	Delete elements
+1524445726885	Rename resource 'dispatcher'
+1524445770860	Delete element
+1524445789736	Delete element
+1524449086592	Copy compilation unit
+1524449102671	Rename type 'DispatcherServlet'
+1524449152575	Copy file
+1524449156196	Copy file
+1524449166436	Rename resource 'dispatcher.jsp'
+1524449991084	Copy file
+1524449992236	Copy file
+1524449999190	Rename resource 'redirect.jsp'
+1524450003844	Copy compilation unit
+1524450014010	Rename type 'RedirectServlet'
+1524450142679	Rename resource 'session.jsp'
+1524450617688	Move '_8.session' to 'ch3'
+1524450626303	Copy file
+1524450987909	Copy compilation unit
+1524451007390	Copy file
+1524451033878	Rename resource 'redirect.jsp'
+1524451899116	Rename type 'SessionServlet'
+1524453411456	Rename resource 'input.jsp'
+1524454332849	Copy file
+1524454365712	Rename resource 'input.jsp'
+1524461462185	Copy file
+1524461477276	Rename resource 'importTest2.jsp'
+1524463979336	Copy file
+1524463982077	Copy file
+1524464110564	Copy file
+1524464244890	Copy file
+1524465455219	Delete element
+1524465474676	Rename package '_2.memReg'
+1524465481278	Rename package '_3.hangul'
+1524465489135	Rename package '_4.check_values'
+1524465494862	Rename package '_5.dispatcher'
+1524465500619	Rename package '_6.redirect'
+1524465506045	Rename package '_7.session'
+1524465511374	Rename package '_8.session'
+1524465517167	Rename package '_9.context'
+1524465784927	Copy compilation unit
+1524465805456	Rename type 'login_ok'
+1524465930848	Rename type 'login_ok1'
+1524468614703	Move '_4.script' to 'ch4'
+1524471341817	Delete element
+1524536663956	Rename resource 'requestTest2.jsp'
+1524536668066	Rename resource 'requestTest.jsp'
+1524539068700	Copy file
+1524547682676	Rename resource 'Web.xml'
+1524550221282	Copy file
+1524551834101	Rename resource 'configTest.jsp'
+1524551959864	Copy file
+1524551981798	Move 'web.xml' to '_7.application'
+1524554163995	Move 'web.xml' to 'WEB-INF'
+1524555251493	Move 'web.xml' to '_8.config'
+1524555348835	Copy file
+1524557222698	Delete element
+1524557232871	Delete element
+1524557234543	Delete element
+1524557272641	Delete element
+1524559037191	Move 2 resources to '_8.config_test'
+1524559041078	Move 'web.xml' to '_8.config_test'
+1524559043679	Delete element
+1524615465513	Rename resource 'id로 유효성 검사_css4.html'
+1524615480266	Delete element
+1524618435138	Rename resource 'validate.js'
+1524618439998	Rename resource 'validate1.js'
+1524619106073	Rename resource 'validate.js'
+1524619110698	Rename resource 'validate2.js'
+1524619235752	Rename resource '_1.request'
+1524619240737	Rename resource '_2.requestHeader'
+1524619245112	Rename resource '_4.response'
+1524619249691	Rename resource '_6.session'
+1524619254113	Rename resource '_7.application'
+1524619258660	Rename resource '_8.config'
+1524619263677	Rename resource '_8.config_test'
+1524619268255	Rename resource '_9.out'
+1524619384509	Copy file
+1524619507174	Delete elements
+1524619516346	Delete element
+1524621685423	Copy file
+1524622838683	Copy file
+1524622862982	Delete element
+1524624006949	Copy file
+1524625583899	Copy file
+1524632967657	Copy file
+1524633040184	Rename resource 'attributeTest1.jsp'
+1524633064488	Rename resource 'forwardTest.jsp'
+1524633131299	Copy file
+1524633842394	Copy file
+1524635355880	Rename resource 'forwardTest2.jsp'
+1524635380257	Rename resource 'forwardTest4.jsp'
+1524636562990	Copy file
+1524636578230	Rename resource 'forwardTest1.jsp'
+1524636706009	Copy file
+1524636870499	Copy file
+1524636879270	Rename resource 'forwardTest3.jsp'
+1524637029815	Move 'error' to 'WEB-INF'
+1524637057748	Rename resource '_13.inlcude_action'
+1524638030856	Copy file
+1524638035763	Copy file
+1524638335380	Rename resource '퍋ㅈ.jsp'
+1524640416876	Copy file
+1524640460329	Rename resource 'bset.jsp'
+1524641496219	Copy files
+1524642379832	Copy file
+1524642563645	Delete element
+1524642573804	Delete element
+1524705368600	Copy file
+1524706224496	Delete element
+1524706246038	Delete element
+1524706296718	Delete element
+1524706553338	Delete element
+1524706572600	Rename type 'qadf'
+1524708697778	Move 'error' to 'WebContent'
+1524709138761	Copy file
+1524709867312	Copy file
+1524712050241	Rename resource 'BeanTest.jsp.jsp'
+1524712061549	Copy file
+1524712067237	Rename resource 'BeanTest1.jsp.jsp'
+1524712458344	Move 3 resources to 'ex1-getproperty'
+1524712461482	Move 2 resources to 'ex2-setproperty'
+1524722490118	Copy files
+1524722768470	Rename resource 'validate.css'
+1524722773517	Rename resource 'validate.js'
+1524723490440	Copy file
+1524726848811	Rename resource '_2.cookie'
+1524726853912	Rename resource '_1.bean'
+1524726857990	Rename resource '_3.cookie'
+1524726911390	Rename resource 'cokkieTest.jsp'
+1524731451070	Rename resource '_4.cookie'
+1524731471735	Copy file
+1524790926021	Copy file
+1524792175021	Copy file
+1524792237522	Rename resource 'join.js'
+1524795168471	Copy file
+1524798284879	Rename resource 'logCheck.jsp'
+1524809759338	Copy file
+1524810442597	Delete element
+1524814254027	Move 'upload' to 'WebContent'
+1524815361141	Rename resource 'filecheck.jsp'

@@ -1,0 +1,34 @@
+package net.board.action;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.board.db.BoardBean;
+import net.board.db.BoardDAO;
+
+public class BoardListAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		BoardDAO boarddao = new BoardDAO();
+		List<BoardBean> boardlist=new ArrayList<BoardBean>();
+		
+		int page=1;
+		int limit=10;
+		
+		if(request.getParameter("page")!=null) {
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		System.out.println("넘어온 페이지 =" + page);
+		
+		// 총 리스트 수를 받아옵니다.
+		int listcount = boarddao.getListConut();
+		System.out.println("리스트의 수는 : " + listcount);
+		
+		return null;
+	}
+
+}

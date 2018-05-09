@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	var interval = setInterval(function (){
+		document.open();
+		document.write(new Date().toLocaleString());
+		document.close();
+	},
+	1000);
+	
+	//10초 후 함수 실행
+	setTimeout(function(){
+		clearInterval(interval);
+	}, 10000);
+	
+	
+	
+	</script>
+</body>
+</html>

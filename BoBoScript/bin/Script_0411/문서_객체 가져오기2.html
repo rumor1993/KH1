@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>문</title>
+<!-- 	문서 객체 가져오기(2)
+	- getElementsByName(namevalue)
+	태그의 name 속성이 namevalue와 일치하는 문서 객체를 배열로 가져옵니다.
+	
+	- getElementsByTagName(tagName)
+	태그 이름이 tagName과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+	
+	- getElmentsByClassName(className)
+	클래스 속성이 className과 일치하는 문서 객체를 배열로 가져옵니다. -->
+	<script>
+		window.onclick=function(){
+			var headers = document.getElementsByTagName('h1');
+			//alert('h1 문서 객체의 갯수 = ' + headers.length);
+			for(var i=0; i<headers.length; i++){
+				headers[i].innerHTML ='header['+i+']:with getElementsByTagName';
+			}
+			//headers[0].innerHTML ='header[0]:with getElementsByTagName';
+			//headers[1].innerHTML ='header[1]:with getElementsByTagName';
+			
+			var input = document.getElementsByName('age');
+			input[0].value = '24살입니다.';
+			input[1].focus();//두 번째 input에 포커스를 줍니다.
+		}
+	</script>
+</head>
+<body>
+	<h1 id="header-1">윈도우를 클릭하면 변경됩니다.</h1>
+	<h1 id="header-2">윈도우를 클릭하면 변경됩니다.</h1>
+	<input type="text" name = 'age'>
+	<input type="text" name = 'age'>
+</body>
+</html>

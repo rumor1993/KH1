@@ -1,0 +1,13 @@
+<%--
+	tag 디렉티브 : 
+
+--%>
+
+<%@ tag language="java" pageEncoding="EUC-KR"%>
+<%@ tag body-content="empty" pageEncoding="EUC-KR" %>
+<%@ tag import ="java.util.Calendar" %>
+<% Calendar cal = Calendar.getInstance(); %>
+<%-- 태그 파일에서 출력한 내용이 그대로 클라이언트에 출력됩니다. --%>
+<%= cal.get(Calendar.YEAR) %> 년
+<%= cal.get(Calendar.MONTH)+1 %> 월
+<%= cal.get(Calendar.DATE) %> 일 

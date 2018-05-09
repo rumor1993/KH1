@@ -1,0 +1,34 @@
+@charset "UTF-8";
+  body {
+	     width: 777px;
+	     margin: 20px auto;
+    }
+    form{margin:0px auto;text-align:center;}
+    fieldset {
+      	padding: 50px;
+	    width: 600px;
+     }
+     label{color:#0c78a5; width:100px; 
+           display:inline-block;font-weight:bold;text-align:left }
+     input{display:inline-block;
+           border-radius:3px; 
+           border:1px solid green; 
+           height:23px; 
+           margin-bottom:20px}
+           
+     textarea{border-radius:3px; 
+              border:1px solid green; }  
+     select{height:30px;border-radius:3px; 
+              border:1px solid lime;}
+     input[type="submit"]
+                          {background:green;
+                          width:208px;height:40px; border:none;color:white}
+      input[type="reset"]
+                          {background:red;
+                          width:208px;height:40px; border:none;color:white}
+                           input[type="submit"]:hover{opacity:0.7}
+                            input[type="reset"]:hover{opacity:0.7}
+     input[type="button"]{background-color:orange;height:30px;border:none;color:white}    
+      input[type="button"]:hover{opacity:0.8}
+     span{height:30px;width:320px;border:1px solid green;display:inline-block;margin-bottom:15px;border-radius:3px; }                                            
+   sup{font-size:15px}

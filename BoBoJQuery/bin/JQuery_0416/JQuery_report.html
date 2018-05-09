@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('li').css('text-align','center')
+					.css('float','left')
+					.css('width','80')
+					.css('list-style','none')
+					.css('box-sizng','border-box')
+					.css('padding','20px 20px');
+			$('li:first-child').css('border-radius','10px 0px 0px 10px');
+			$('li:last-child').css('border-radius','0px 10px 10px 0px');
+			$('li:nth-child(2n+1)').css('background-color','darkred');
+			$('li:nth-child(2n)').css('background-color','red');
+			$('p').css('clear','left');
+					
+					
+			
+			}		
+		);
+	</script>
+</head>
+<body>
+	<ul>
+		<li>first</li>
+		<li>second</li>
+		<li>third</li>
+		<li>forth</li>
+		<li>fifth</li>
+		<li>sixth</li>
+		<li>seventh</li>
+	</ul>
+	<p>꿈틀이다</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <title>Using Objects</title>
+ <style>
+table{width:500px; height:500px; text-align: center; 
+		font-size:18pt; margin:auto; border-collapse:collapse;}
+caption{color:green; text-align: center; font-size:30pt; font-weight:border}
+
+th{background:linear-gradient(to bottom, gray, white, gray)}
+td{background:linear-gradient(to right, white, skyblue, white)}
+td:hover{background:linear-gradient(to right, black, white, black)}
+</style>
+ </head>
+ <body>
+<script>
+		var saram = new Object();
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+		
+		saram.print = function (){
+			
+			   list = "<table border=1>";
+			   list += "<caption>신상 정보</caption>";
+			   list += "<tr>";
+			   list += "<th>항목 (속성: property)</th>"
+			   list += "<th>내용 (값: value)</th>"
+			   list += "</tr>";
+        	   
+			   for(var a in saram){
+				   if(a!="print" && a!= "name"){
+					   
+					   switch(a){
+					   case "age" : saram[a] += "세";
+					   break;
+					   case "ki" : saram[a] += "cm";
+					   break;
+					   case "blood" : saram[a] += "형";
+					   break;
+					   }
+
+				   list += "<tr>";
+				   list += "<td>" + "saram."+ a + "</td>"
+				   list += "<td>" + saram[a] + "</td>"
+				   list += "</tr>";
+				   
+				}
+			   }
+			   list += "</table>";
+			   document.write(list);
+		}
+		
+   	saram.print();
+        
+      
+	</script>
+	
+ </body>
+</html>
+
+
+
+
+

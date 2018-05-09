@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 	문서 객체 가져오기 (2) 
+	-getElementsByName(namevalue)
+	태그의 name 속성이 namevalue와 일치하는 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByTagName(tagName)
+	태그이름이 tagName 과 일치 하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByClassName(className)
+	클래스 속성이 className과 일치하는 문서 객체를 배열로 가져옵니다.-->
+	<script>
+		window.onclick = function (){
+			//문서 객체를 가져 옵니다.
+			var headers = document.getElementsByTagName('h1');
+			alert("h1 문서 객체의 갯수 =" + headers.length);
+			
+			
+			
+		}
+	</script>
+
+</head>
+<body>
+	<h1 id = "header-1">윈도우를 클릭하면 변경 됩니다.</h1>
+	<h1 id = "header-2">윈도우를 클릭하면 변경 됩니다.</h1>
+	<input type="text" name='age'>
+	<input type="text" name='age'>
+</body>
+</html>

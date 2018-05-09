@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>일반구조선택자</title>
+</head>
+	<style>
+		li{width:100px;text-align:center;list-style:none;
+		 float:left;box-sizing:border-box; padding:20px 20px}
+		 /*height:50px;line-height:50px 세로의 길이 만큼 값을 주면 세로 가운데 정렬이 됩니다.*/
+		li:first-child{border-radius:10px 0px 0px 10px}
+		li:last-child{border-radius:0px 10px 10px 0px}
+		li:nth-child(2n+1){background-color:darkred; }
+		li:nth-child(2n){background-color:red;}
+		p{clear:left; padding-left:50px}
+	</style>
+<body>
+	<ul>
+		<li>first</li>
+		<li>second</li>
+		<li>third</li>
+		<li>fourth</li>
+		<li>fifth</li>
+		<li>sixth</li>
+		<li>seventh</li>
+	</ul>
+	<p>나는 꿈틀이 입니다.</p>
+</body>
+</html>

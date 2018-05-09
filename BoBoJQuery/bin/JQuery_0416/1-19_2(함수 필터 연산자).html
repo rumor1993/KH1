@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.3.1.js"></script>
+<!-- jQuery 함수 필터 선택자
+	요소:nth-child(3n+1) : 3n+1번째에 위치하는 문서 객체를 선택합니다.(1,4,7. . .)
+	요소:eq(n) :n번째 위치하는 문서 객체를 선택합니다.(0,1,2,3,4,...)
+	 -->
+	<script>
+		$(document).ready(function(){
+			$('tr:eq(0)').css('background-color','black')
+						.css('color','white');
+			$('td:nth-child(3n+1)').css('background-color','red');
+			$('td:nth-child(3n+2)').css('background-color','lime');
+			$('td:nth-child(3n)').css('background-color','violet');
+			
+			}
+		);
+	</script>
+</head>
+<body>
+	<caption>추천 도서 표</caption>
+		<table>
+		<thead><!-- 표의 헤더 영역부분 -->
+			<tr>
+				<th>책제목</th>
+				<th>작가</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>총</td>
+				<td>3권</td>
+				<td>75,000원</td>
+			</tr>
+		</tfoot><!-- 표의 푸터 영역부분 -->
+		<tbody>
+			<tr>
+				<td>스티브잡스</td>
+				<td>월터아이작슨 저, 인진환 역</td>
+				<td>25,000원</td>
+			</tr>
+			<tr>
+				<td>나를 지키는 말 88</td>
+				<td>손화신, 쌤앤파커스</td>
+				<td>25,000원</td>
+			</tr>
+			<tr>
+				<td>언어의 마술사</td>
+				<td>해냄</td>
+				<td>25,000원</td>
+			</tr>
+		</tbody><!-- 표의 내용 영역부분 -->
+		</table>
+</body>
+</html>

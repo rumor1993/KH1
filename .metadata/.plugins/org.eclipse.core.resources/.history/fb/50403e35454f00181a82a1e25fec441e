@@ -1,0 +1,4 @@
+<%@ tag language="java" pageEncoding="EUC-KR"%>
+<%@ taglib prefix="tf" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="date" class="java.util.Date"></jsp:useBean>
+<fmt:formatDate value="${date}" type="both" timeStyle="long" dateStyle="long"/><br>

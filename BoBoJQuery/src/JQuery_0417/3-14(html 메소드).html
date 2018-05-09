@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+	<!--문서 객체의 내부 추가
+		html() : 문서 객체 내부의 글자와 관련된 모든 기능을 수행합니다.
+				(HTML태그 인식)
+		text() : 문서 객체 내부의 글자와 관련된 모든 기능을 수행합니다.
+		형식)
+			1. $(selector).html(value);
+			2. $(selector).html(function(index, html){});
+	-->
+
+	<script>
+		$(document).ready(function(){
+			//$('div').text('<h1>html()메소드 입니다.</h1>');//text는 문자열로 인식해서 h1적용 안됨
+			$('div').html('<h1>html()메소드 입니다.</h1>');
+		});
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>INDEX</title>
+	<style>
+		#after{
+			border : 2px solid black;
+			color : orange;
+			font-family : helvetica;
+			background-color : red;
+		}
+	</style>
+</head>
+	
+<body>
+	<h1 id ="header">HEADER</h1>
+</body>
+	<script>
+		var h = document.getElementById('header');
+		function change(){
+			h.setAttribute("id", "after");
+		}
+		h.onclick=change;
+	</script>
+</html>

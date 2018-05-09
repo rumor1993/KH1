@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+<!-- -->
+	<style>
+		span{color:blue; opacity:0}
+	</style>
+ 	<script>
+ 	$(document).ready(function(){
+ 		$('button').click(function(){
+ 			
+ 			var status = $('span').css('opacity');
+ 			if(status =='0')
+ 				$('span').css('opacity','1');
+ 			else
+ 				$('span').css('opacity','0');
+ 					
+ 		})
+	});
+	 </script>
+	 
+</head>
+<body>
+	<h1>다음 빈 곳에 숨은 단어?</h1>
+	<button>Show/Hide</button>
+	<hr>
+	<div class="page">
+		<ul>
+			<li>HTML is HyperText( <span>MarkUP</span> ) Language</li>
+			<li>CSS is Cascading ( <span>Style</span> ) Sheet</li>
+		</ul>
+	</div>
+</body>
+</html>

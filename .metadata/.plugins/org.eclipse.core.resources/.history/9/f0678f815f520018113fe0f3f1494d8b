@@ -1,0 +1,5 @@
+package ch12.db;
+
+public class Member {
+
+}

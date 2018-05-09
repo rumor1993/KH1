@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<style>
+	table{margin:0 auto; width:400px;
+		 text-align:center;border-collapse: collapse; border-color:pink}
+	caption{color : green; font-size:30pt}
+	th{background-color : violet}
+	
+</style>
+<body>
+	<script>
+		var book = new Object();
+		//생성된 객체에 속성 추가하기
+		book.title = "채식주의자";
+		book.publisher = "창비";
+		book.author = "한강";
+		book.price = 25000;
+		//객체의 구조를 계층적으로 구성한 경우	
+		book.info = new Object();
+		book.info.pages = 422;
+		book.info.date = "2010년 1월 30일";
+		book.info.ISBN10 = "8970506470";
+		book.info.size = "188mm*254mm";
+		
+		var list = "<table border=1 >";
+		list += "<caption>서적 정보</caption>";
+		list += "<tbody>";
+		list += "<tr>";
+		list += "<th> 항목(속성:property) </th>";
+		list += "<th> 내용(값:value) </th>";
+		list += "</tr>"
+		list += "<tr><td>book.title</td>"
+		list += "<td>" + book.title + "</td></tr>"
+		list += "<tr><td>book.publisher</td>"
+		list += "<td>" + book.publisher + "</td></tr>"
+		list += "<tr><td>book.author</td>"
+		list += "<td>" + book.author + "</td></tr>"
+		list += "<tr><td>book.price</td>"
+		list += "<td>" + book.price + "</td></tr>"
+		list += "<tr><td>book.info.pages</td>"
+		list += "<td>" + book.info.pages+ "</td></tr>"
+		list += "<tr><td>book.info.date</td>"
+		list += "<td>" + book.info.date + "</td></tr>"				
+		list += "<tr><td>book.info.ISBN10</td>"
+		list += "<td>" + book.info.ISBN10 + "</td></tr>"
+		list += "<tr><td>book.info.size</td>"
+		list += "<td>" + book.info.size + "</td></tr>"
+		
+		list +="</tbody></table>";
+		
+		document.body.innerHTML = list;
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	 <script>
+
+	 	functionVar();
+	 	/* functionVar is not a function error 발생:
+	 		익명함수는 함수 표현뒤에 함수를 호출해야 에러가 없다*/
+	 		
+	 		
+	 		
+	 		
+	//				함수의 이름이 없기 때문에 익명함수라고 한다.
+		
+		var functionVar = function(){
+	 		var output = prompt('숫자를 입력하세요','숫자'	);
+	 		alert("입력한 숫자 = " + output);
+	 	}
+	 	
+	 	//functionVar 의 자료형 확인하고 내용확인
+	 	document.write("type = " + typeof(functionVar) + "<br>"+functionVar);
+	 	
+	 	//함수 자료형 변수명 뒤에 소괄호를 열고 닫으면 함수를 실행하게 된다.
+	 	
+	 	
+	 	(function(){
+	 		alert("즉시 실행합니다.");
+	 	})();
+	 </script>
+</head>
+<body>
+
+</body>
+</html>

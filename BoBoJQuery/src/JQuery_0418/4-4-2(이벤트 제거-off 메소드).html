@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- one() : 이벤트를 한 번씩만 실행합니다. -->
+	 <script>
+	 	$(document).ready(function(){
+	 		$('h1').one('click',function(){
+	 			$(this).html(function(index, html){
+	 				return html + '+';
+	 			});
+	 		});
+	 	});
+	 </script>
+	 <style>
+	 	.reverse{background : black; color : white}
+	 </style>
+</head>
+<body>
+	<h1>HEADER(0)</h1>
+	<h1>HEADER(1)</h1>
+	<h1>HEADER(2)</h1>
+</body>
+</html>

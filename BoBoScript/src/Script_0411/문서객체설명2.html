@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>INDEX</title>
+</head>
+	<script>
+		window.onclick = function(){
+			var headerobject = document.getElementById('header');
+			headerobject.style.color='orange';
+			headerobject.style.backgroundColor='red';
+			headerobject.style.border=' 2px solid black';
+			headerobject.style.fontFamily='helvetica';
+		}
+		/*CSS에서 background-color는 하이픈(-) 없애고
+		끊겨진 단어의 첫 글자를 대문자로 변경하면 됩니다.
+		예)background-color -> backgroundColor
+		
+		CSS에서와 같이 사용할 경우 []를 사용
+		header.style['border']='2px solid black';
+		*/
+
+	</script>
+<body>
+	<h1 id ="header">HEADER</h1>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 표시 Test</title>
+</head>
+<body>
+<p id="yoil" style=color:red;></p>
+<p id="yoil2" style=color:blue;></p>
+<script type="text/javascript">
+var today = new Date(2018, 3, 8, 15, 15, 15);
+   var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+   
+   
+   document.write('현재 날짜: ' + today.getFullYear() + '년 ' 
+		                     + (today.getMonth()+1) + '월 ' 
+		                     + today.getDate() + '일 '
+		                     + week[today.getDay()]);
+   document.write('<br />');
+   document.write('현재 시간: ' + today.getHours() + '시 ' 
+		                     + today.getMinutes() + '분 ' 
+		                     + today.getSeconds() + '초' + '<br />');
+   document.getElementById("yoil").innerHTML = week[today.getDay()];
+
+   document.write("<br>");
+
+   var today = new Date(2018, 3, 7, 15, 15, 15);
+   var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+   
+   document.write('현재 날짜: ' + today.getFullYear() + '년 ' 
+		                     + (today.getMonth()+1) + '월 ' 
+		                     + today.getDate() + '일 '
+		                     + week[today.getDay()]);
+   document.write('<br />');
+   document.write('현재 시간: ' + today.getHours() + '시 ' 
+		                     + today.getMinutes() + '분 ' 
+		                     + today.getSeconds() + '초' + '<br />');
+   document.getElementById("yoil2").innerHTML = week[today.getDay()];
+   
+   if( week[today.getDay()] == "일요일")
+	   document.getElementById("yoil").innerHTML = week[today.getDay()];
+   else if ( week[today.getDay()] == "토요일")
+	   document.getElementById("yoil2").innerHTML = week[today.getDay()];
+</script>
+</body>
+</html>

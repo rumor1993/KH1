@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%-- fmt: 국제화/형식화의 기능을 제공해 주는 JSTL 라이브러리 입니다.
+	fmt 라이브러리를 등록하는 코드 입니다. --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<%@ taglib prefix="tf" tagdir="/WEB-INF/tags" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>now</title>
+</head>
+<body>
+	오늘은 <b><tf:1_now/></b> 입니다.
+	<%-- _1now는 태그파일 이름 입니다. --%>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- hover() 메소드 : mouseenter 이벤트와, mouseleave 이벤트를 동시에 연결한다.
+		형식) $(selector).hover(function(event){},function(event){});-->
+	 <script>
+/*
+ * 이벤트를 연결합니다
+ 	on()메소드의 첫 번째 매개 변수는 이벤트 이름이고(click) 두 번째 매개 변수에 이벤트 리스너를 입력합니다.
+ 	여기서 사용된 this는 이벤트가 발생한 객체를 의미합니다.
+ 	h1태그를 click이벤트에 연결하고 이벤트 발생 시 이벤트 발생 객체에 '+' 글자를 추가합니다.
+ */
+	 	$(document).ready(function(){
+	 		
+	 		var a =["+","-","*"];
+	 		var b = {click : function(){
+	 			$(this).html(function(index, html){
+	 				return html + a[$(this).index()];
+	 			})
+	 		}}
+	 		
+	 		$('h1').hover(function(){
+	 			$(this).addClass('reverse');
+	 		},function(){
+	 			$(this).removeClass('reverse');
+	 		})
+			$('h1').on(b);
+	 		});
+	 </script>
+	 <style>
+	 	.reverse{background : black; color : white}
+	 </style>
+</head>
+<body>
+	<h1>HEADER(0)</h1>
+	<h1>HEADER(1)</h1>
+	<h1>HEADER(2)</h1>
+</body>
+</html>
