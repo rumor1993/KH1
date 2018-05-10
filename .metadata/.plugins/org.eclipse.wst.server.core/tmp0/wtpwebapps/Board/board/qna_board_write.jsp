@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>Insert title here</title>
+
+	<script src = "http://code.jquery.com/jquery-3.3.1.js"></script>
+
 </head>
 <link href="css/form.css" rel="stylesheet">
 <body>
@@ -57,6 +60,8 @@
 				</td>
 				<td>
 					<input name="BOARD_FILE" id="upfile" type="file">
+		<!-- 			<img src="./image/image.png" onclick="document.all.BOARD_FILE.click(); document.all.filePath.value=document.all.BOARD_FILE.value" >
+					<input type="text" name="filePath" readonly> -->
 				</td>
 			</tr>
 			

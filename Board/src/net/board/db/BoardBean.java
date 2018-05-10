@@ -13,8 +13,10 @@ public class BoardBean {
 	private int BOARD_RE_REF;		// 답변 글 작성시 참조되는 글의 번호
 	private int BOARD_RE_LEV;		// 답변 글의 깊이
 	private int BOARD_RE_SEQ;		// 답변 글의 순서
-	private int BOARD_READCONUT;	// 글의 조회수
+	private int BOARD_READCOUNT;	// 글의 조회수
 	private Date BOARD_DATE;			// 글의 작성 날짜
+	
+	
 	public int getBOARD_NUM() {
 		return BOARD_NUM;
 	}
@@ -69,11 +71,11 @@ public class BoardBean {
 	public void setBOARD_RE_SEQ(int bOARD_RE_SEQ) {
 		BOARD_RE_SEQ = bOARD_RE_SEQ;
 	}
-	public int getBOARD_READCONUT() {
-		return BOARD_READCONUT;
+	public int getBOARD_READCOUNT() {
+		return BOARD_READCOUNT;
 	}
-	public void setBOARD_READCONUT(int bOARD_READCONUT) {
-		BOARD_READCONUT = bOARD_READCONUT;
+	public void setBOARD_READCOUNT(int bOARD_READCOUNT) {
+		BOARD_READCOUNT = bOARD_READCOUNT;
 	}
 	public Date getBOARD_DATE() {
 		return BOARD_DATE;

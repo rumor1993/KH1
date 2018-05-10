@@ -58,6 +58,40 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/BoardDetailAction.bo")) {
+			action = new BoardDetailAction(); // 다형성에 의한
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/BoardRelplyView.bo")) {
+			action = new BoardRelplyView(); // 다형성에 의한
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/BoardReplyAction.bo")) {
+			action = new BoardReplyAction(); // 다형성에 의한
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/BoardReplyAction.bo")) {
+			action = new BoardReplyAction(); // 다형성에 의한
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 
 		
 		

@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+ <%@ taglib prefix="c"
+	uri="http://java.sun.com/jsp/jstl/core" %>
+</head>
+<link href="css/list.css" rel="stylesheet">
+<%
+request.setCharacterEncoding("euc-kr");
+%>
+<body>
+	<table border=1>
+		<c:set var="d" value="${dboarddata }"/>
+		<tr>
+			<td colspan></td>
+		</tr>
+		<tr>
+			<td>글쓴이</td>
+			<td>${d.BOARD_NAME }</td>
+		</tr>
+		<tr>
+			<td>제목</td>
+			<td>${d.BOARD_SUBJECT }</td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td>${d.BOARD_CONTENT }</td>
+		</tr>
+		<tr>
+			<td>파일</td>
+			<td>${d.BOARD_FILE }</td>
+		</tr>
+		
+		<tr>
+			<td colspan=2>
+			<button>답변</button>
+			<button>수정</button>
+			<button>삭제</button>
+			<button>목록</button>
+			
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

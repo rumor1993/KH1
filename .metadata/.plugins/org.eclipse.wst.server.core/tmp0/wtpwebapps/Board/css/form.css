@@ -1,4 +1,4 @@
-@CHARSET "EUC-KR";
+    @CHARSET "EUC-KR";
 *{box-sizing:border-box;}
 table{margin:0 auto;width:80% ;border-collapse:collapse;}
 td{border-bottom:1px solid #cdc9c9;padding:1%;}
@@ -14,8 +14,8 @@ input[type=text], input[type=password]{width:100%;}
 input[type=submit],input[type=reset]{border-radius:3px}
 textarea{width:100%}
 input[name="BOARD_NAME"]{border:none}
-#upfile{display:none} 
-img{width:20px;}
+/* #upfile{display:none} 
+img{width:20px;} */
 
 
    

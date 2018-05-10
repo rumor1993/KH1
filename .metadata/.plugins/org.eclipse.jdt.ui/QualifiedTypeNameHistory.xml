@@ -27,9 +27,12 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="net.board.action.ActionForward"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+<fullyQualifiedTypeName name="net.board.action.BoardRelplyView"/>
+<fullyQualifiedTypeName name="net.board.db.BoardBean"/>
+<fullyQualifiedTypeName name="net.board.db.BoardDAO"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="net.board.action.ActionForward"/>
 </qualifiedTypeNameHistroy>

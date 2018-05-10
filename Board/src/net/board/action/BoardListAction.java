@@ -70,6 +70,7 @@ public class BoardListAction implements Action {
 		
 		// 현재 페이지에 표시할 첫 페이지 수
 		request.setAttribute("startpage", startpage);
+		request.setAttribute("endpage", endpage);
 		
 		// 해당 페이지의 글 목록을 갖고 있는 리스트
 		request.setAttribute("boardlist", boardlist);
@@ -77,6 +78,7 @@ public class BoardListAction implements Action {
 		request.setAttribute("listcount", listcount);
 		ActionForward forward = new ActionForward();
 		
+		request.setCharacterEncoding("euc-kr");
 		// 글 목록 페이지로 이동하기 위해 경로를 설정합니다.
 		forward.setRedirect(false);
 		forward.setPath("./board/qna_board_list.jsp");

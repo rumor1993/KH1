@@ -101,7 +101,7 @@ public class BoardDAO {
 			board.setBOARD_RE_REF(rs.getInt("BOARD_RE_REF"));
 			board.setBOARD_RE_LEV(rs.getInt("BOARD_RE_LEV"));
 			board.setBOARD_RE_SEQ(rs.getInt("BOARD_RE_SEQ"));
-			board.setBOARD_READCONUT(rs.getInt("BOARD_READCOUNT"));
+			board.setBOARD_READCOUNT(rs.getInt("BOARD_READCOUNT"));
 			board.setBOARD_DATE(rs.getDate("BOARD_DATE"));
 			list.add(board);
 			
@@ -115,7 +115,7 @@ public class BoardDAO {
 			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
 			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
 		}
-		return null;
+		return list;
 	}
 	//글 등록하기
 	public boolean boardInsert(BoardBean boarddata) {
@@ -126,7 +126,7 @@ public class BoardDAO {
 			con = ds.getConnection();
 			//board 테이블의 board_num 필드의 최대값을 구해와서 글을 
 			//등록할 때 글 번호를 순차적으로 지정하기 위함입니다.
-			String max_sql = "select max(board_num) from board";
+			String max_sql = "select max(BOARD_NUM) from board ";
 			pstmt=con.prepareStatement(max_sql);
 			rs = pstmt.executeQuery();
 			
@@ -136,12 +136,12 @@ public class BoardDAO {
 				num=1; // 처음 데이터를 등록하는 경우입니다.
 			}
 			
-			sql = "insert into board"
+			sql = "insert into BOARD "
 					+ "(BOARD_NUM, BOARD_NAME, BOARD_PASS, BOARD_SUBJECT,"
-					+ "BOARD_CONTENT,BOARD_FILE, BOARD_RE_REF"
+					+ "BOARD_CONTENT,BOARD_FILE, BOARD_RE_REF,"
 					+ "BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT,"
 					+ "BOARD_DATE) "
-					+ "values(?,?,?,?,?,?,?,?,?,?,sysdate) ";
+					+ "values(?,?,?,?,?,?,?,?,?,?,SYSDATE) ";
 			
 			//새로운 글을 등록하는 부분입니다.
 			pstmt = con.prepareStatement(sql);
@@ -166,6 +166,7 @@ public class BoardDAO {
 			}
 		}catch(Exception e) {
 			System.out.println("boardInsert() 에러 : " + e);
+			e.printStackTrace();
 		}finally {
 			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
 			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
@@ -173,4 +174,139 @@ public class BoardDAO {
 		}
 		return false;
 	}// boardInsert() 메서드 end
+
+	public BoardBean getDetail(int num) {
+		try {
+		BoardBean board = new BoardBean();
+		con = ds.getConnection();
+		/*String sql = "select BOARD_NAME,BOARD_SUBJECT,BOARD_CONTENT,BOARD_FILE from BOARD where BOARD_NUM = ?";*/
+		
+		String sql = "select * from BOARD where BOARD_NUM = ?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			board.setBOARD_NUM(rs.getInt("BOARD_NUM"));
+			board.setBOARD_NAME(rs.getString("BOARD_NAME"));
+			board.setBOARD_SUBJECT(rs.getString("BOARD_SUBJECT"));
+			board.setBOARD_CONTENT(rs.getString("BOARD_CONTENT"));
+			board.setBOARD_FILE(rs.getString("BOARD_FILE"));
+			board.setBOARD_RE_REF(rs.getInt("BOARD_RE_REF"));
+			board.setBOARD_RE_LEV(rs.getInt("BOARD_RE_LEV"));
+			board.setBOARD_RE_SEQ(rs.getInt("BOARD_RE_SEQ"));
+			board.setBOARD_READCOUNT(rs.getInt("BOARD_READCOUNT"));
+			board.setBOARD_DATE(rs.getDate("BOARD_DATE"));
+		}
+		return board;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return null;
+		
+		
+		
+	}
+	
+	public void setReadCountUpdate(int num) {
+		String sql = "update board "
+				+ "set BOARD_READCOUNT=BOARD_READCOUNT+1 "
+				+ "where BOARD_NUM = ?";
+		try {
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		}catch(SQLException ex) {
+			System.out.println("setReadCountUpdate() 에러 : " +ex);
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+				
+	}
+
+	public int boardReply(BoardBean boarddata) {
+		// board 테이블의 board_num 필드의 최대값을 구해와서 글을 등록할 때
+		// 글 번호를 순차적으로 지정하기 위함입니다.
+		String board_max_sql="select max(board_num) from board";
+		
+		int num=0;
+		String sql="update board "
+				     + "set BOARD_RE_SEQ=BOARD_RE_SEQ + 1 "
+				     + "where BOARD_RE_REF = ? "
+				     + "and BOARD_RE_SEQ > ?";
+		
+	    String sql2= "insert into board "
+	  	      + "(BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,"
+	  	      + " BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF,"
+	  	      + " BOARD_RE_LEV, BOARD_RE_SEQ,"
+	  	      + " BOARD_READCOUNT,BOARD_DATE) "
+	  	      + "values(?,?,?,?,?,?,?,?,?,?,sysdate)";
+
+		// 답변을 할 원문 글 그룹 번호입니다.
+		// 답변을 달게 되면 답변 글은 이번호와 같은 관련글 번호를 갖게 처리되면서
+		// 같은 그룹에 속하게 됩니다.
+		try {
+			con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(board_max_sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			num	= rs.getInt(1)+1;
+			}
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, boarddata.getBOARD_RE_REF());
+			pstmt.setInt(2, boarddata.getBOARD_RE_SEQ());
+			pstmt.executeUpdate();
+			pstmt.close();
+			
+			/*  
+			 	답글의 깊이를 의미합니다.
+			 	원문에 대한 답글이 출력 될 때 한 번 들여쓰기 처리가 되고
+			 	답글에 대한 답글은 들여쓰기가 두 번 처리되게 합니다.
+			 	원문인 경우에는 이값이 0이고 원문의 답글은 1, 답글의 답글은 2가 됩니다.
+			 
+			 */
+			int re_seq = boarddata.getBOARD_RE_SEQ();
+            re_seq = re_seq + 1;
+            int re_lev = boarddata.getBOARD_RE_LEV();
+            re_lev = re_lev + 1;
+			
+			pstmt = con.prepareStatement(sql2);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, boarddata.getBOARD_NAME());
+			pstmt.setString(3, boarddata.getBOARD_PASS());
+			pstmt.setString(4, boarddata.getBOARD_SUBJECT());
+			pstmt.setString(5, boarddata.getBOARD_CONTENT());
+			pstmt.setString(6, ""); // 답변에는 파일을 업로드 하지 않습니다.
+			pstmt.setInt(7, boarddata.getBOARD_RE_REF());
+			pstmt.setInt(8,	re_lev);
+			pstmt.setInt(9, re_seq);
+			pstmt.setInt(10, 0); // 조회수는 0
+			pstmt.executeUpdate();
+			return num;
+			
+			
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return 0;
+	}
 }

@@ -1,0 +1,304 @@
+package net.board.db;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+
+/*
+ 	DAO(Data Access Object) 클래스
+ 	- 데이터 베이스와 연동하여 레코드의 추가, 수정, 삭제 작업이
+ 	이루어지는 클래스 입니다.
+ 	
+ 	- 어떤 Action 클래스가 호출되더라도 그에 해당하는 데이터베이스
+ 	연동 처리는 DAO 클래스에서 이루어지게 됩니다.
+ */
+
+public class BoardDAO {
+	DataSource ds;
+	Connection con;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	int result;
+	
+	// 생성자에게 JNDI 리소스를 참조하여 Connection 객체를 얻어옵니다.
+	public BoardDAO() {
+		try {
+			Context init = new InitialContext();
+			ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+			
+		}catch(Exception ex) {
+			System.out.println("DB 연결 실패 : " + ex);
+			return;
+		}
+	}
+
+	public int getListConut() {
+		try {
+			con = ds.getConnection();
+			String sql = "select count(*) from board";
+			pstmt = con.prepareStatement(sql);
+	
+			rs = pstmt.executeQuery();
+			result = 0;
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		}catch(Exception e) {
+			System.out.println("getListCount() 에러 : " + e);
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return result;
+	}
+	
+	// 글 목록 보기
+	public List<BoardBean> getBoardList(int page, int limit) {
+		// page : 페이지
+		// limit : 페이지 당 목록의 수
+		// BOARD_RE_REF desc, BOARD_RE_SEQ asc에 의해 정렬한 것을 
+		// 조건절에 맞는 rnum의 범위 만큼 가져오는 쿼리문 입니다.
+		
+		
+		String board_list_sql = 
+				"select * from "
+				+		"(select rownum rnum, BOARD_NUM,BOARD_NAME, BOARD_SUBJECT, BOARD_CONTENT, BOARD_FILE,"
+				+ 		"BOARD_RE_REF, BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT, BOARD_DATE from"
+				+ 		"(select * from board "
+				+ 		"order by BOARD_RE_REF desc,"
+				+ 		"BOARD_RE_SEQ)) "
+				+ "where rnum>=? and rnum<=?";
+								// 한페이지당 10개식 목록인 경우 	1페이지	2페이지	3페이지	4페이지
+		int startrow=(page-1)* limit + 1; // 읽기 시작할 row 번호(1		 11		21		 31)
+		int endrow= startrow + limit - 1; // 읽을 마지막 row 번호(10		 20		30		 40)
+		
+		ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		try {
+		con = ds.getConnection();
+		pstmt = con.prepareStatement(board_list_sql);
+		pstmt.setInt(1, startrow);
+		pstmt.setInt(2, endrow);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			BoardBean board = new BoardBean();
+			board.setBOARD_NUM(rs.getInt("BOARD_NUM"));
+			board.setBOARD_NAME(rs.getString("BOARD_NAME"));
+			board.setBOARD_SUBJECT(rs.getString("BOARD_SUBJECT"));
+			board.setBOARD_CONTENT(rs.getString("BOARD_CONTENT"));
+			board.setBOARD_FILE(rs.getString("BOARD_FILE"));
+			board.setBOARD_RE_REF(rs.getInt("BOARD_RE_REF"));
+			board.setBOARD_RE_LEV(rs.getInt("BOARD_RE_LEV"));
+			board.setBOARD_RE_SEQ(rs.getInt("BOARD_RE_SEQ"));
+			board.setBOARD_READCOUNT(rs.getInt("BOARD_READCOUNT"));
+			board.setBOARD_DATE(rs.getDate("BOARD_DATE"));
+			list.add(board);
+			
+		}
+		return list; // 값을 담은 객체를 지정한 리스트를 호출한 곳으로 가
+		// DB에서 가져온 테이블 VO객체에 담습니다.
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return list;
+	}
+	//글 등록하기
+	public boolean boardInsert(BoardBean boarddata) {
+		int num =0;
+		String sql="";
+		int result=0;
+		try {
+			con = ds.getConnection();
+			//board 테이블의 board_num 필드의 최대값을 구해와서 글을 
+			//등록할 때 글 번호를 순차적으로 지정하기 위함입니다.
+			String max_sql = "select max(BOARD_NUM) from board ";
+			pstmt=con.prepareStatement(max_sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				num = rs.getInt(1)+1; // 최대값보다 1만큼 큰값을 지정합니다.
+			}else {
+				num=1; // 처음 데이터를 등록하는 경우입니다.
+			}
+			
+			sql = "insert into BOARD "
+					+ "(BOARD_NUM, BOARD_NAME, BOARD_PASS, BOARD_SUBJECT,"
+					+ "BOARD_CONTENT,BOARD_FILE, BOARD_RE_REF,"
+					+ "BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT,"
+					+ "BOARD_DATE) "
+					+ "values(?,?,?,?,?,?,?,?,?,?,SYSDATE) ";
+			
+			//새로운 글을 등록하는 부분입니다.
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, boarddata.getBOARD_NAME());
+			pstmt.setString(3, boarddata.getBOARD_PASS());
+			pstmt.setString(4, boarddata.getBOARD_SUBJECT());
+			pstmt.setString(5, boarddata.getBOARD_CONTENT());
+			pstmt.setString(6, boarddata.getBOARD_FILE());
+			pstmt.setInt(7, num); // BOARD_RE_REF
+			
+			// 원문의 경우 BOARD_RE_LEV, BOARD_RE_SEQ 필드 값은 0 입니다.
+			pstmt.setInt(8, 0);
+			pstmt.setInt(9, 0);
+			pstmt.setInt(10, 0);
+			
+			result = pstmt.executeUpdate();
+			if(result==0) {
+				return false;
+			}else {
+			return true;
+			}
+		}catch(Exception e) {
+			System.out.println("boardInsert() 에러 : " + e);
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return false;
+	}// boardInsert() 메서드 end
+
+	public BoardBean getDetail(int num) {
+		try {
+		BoardBean board = new BoardBean();
+		con = ds.getConnection();
+		/*String sql = "select BOARD_NAME,BOARD_SUBJECT,BOARD_CONTENT,BOARD_FILE from BOARD where BOARD_NUM = ?";*/
+		
+		String sql = "select * from BOARD where BOARD_NUM = ?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			board.setBOARD_NUM(rs.getInt("BOARD_NUM"));
+			board.setBOARD_NAME(rs.getString("BOARD_NAME"));
+			board.setBOARD_SUBJECT(rs.getString("BOARD_SUBJECT"));
+			board.setBOARD_CONTENT(rs.getString("BOARD_CONTENT"));
+			board.setBOARD_FILE(rs.getString("BOARD_FILE"));
+			board.setBOARD_RE_REF(rs.getInt("BOARD_RE_REF"));
+			board.setBOARD_RE_LEV(rs.getInt("BOARD_RE_LEV"));
+			board.setBOARD_RE_SEQ(rs.getInt("BOARD_RE_SEQ"));
+			board.setBOARD_READCOUNT(rs.getInt("BOARD_READCOUNT"));
+			board.setBOARD_DATE(rs.getDate("BOARD_DATE"));
+		}
+		return board;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return null;
+		
+		
+		
+	}
+	
+	public void setReadCountUpdate(int num) {
+		String sql = "update board "
+				+ "set BOARD_READCOUNT=BOARD_READCOUNT+1 "
+				+ "where BOARD_NUM = ?";
+		try {
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		}catch(SQLException ex) {
+			System.out.println("setReadCountUpdate() 에러 : " +ex);
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+				
+	}
+
+	public int boardReply(BoardBean boarddata) {
+		// board 테이블의 board_num 필드의 최대값을 구해와서 글을 등록할 때
+		// 글 번호를 순차적으로 지정하기 위함입니다.
+		String board_max_sql="select max(board_num) from board";
+		
+		int num=0;
+		String sql="update board "
+				     + "set BOARD_RE_SEQ=BOARD_RE_SEQ + 1 "
+				     + "where BOARD_RE_REF = ? "
+				     + "and BOARD_RE_SEQ > ?";
+		
+	    String sql2= "insert into board "
+	  	      + "(BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,"
+	  	      + " BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF,"
+	  	      + " BOARD_RE_LEV, BOARD_RE_SEQ,"
+	  	      + " BOARD_READCOUNT,BOARD_DATE) "
+	  	      + "values(?,?,?,?,?,?,?,?,?,?,sysdate)";
+
+		// 답변을 할 원문 글 그룹 번호입니다.
+		// 답변을 달게 되면 답변 글은 이번호와 같은 관련글 번호를 갖게 처리되면서
+		// 같은 그룹에 속하게 됩니다.
+		try {
+			con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(board_max_sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			num	= rs.getInt(1)+1;
+			}
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, boarddata.getBOARD_RE_REF());
+			pstmt.setInt(2, boarddata.getBOARD_RE_SEQ());
+			pstmt.executeUpdate();
+			pstmt.close();
+			
+			re_seq = boarddata.getBOARD_RE_SEQ()
+            re_seq = re_seq + 1;
+            re_lev = re_lev + 1;
+			
+			pstmt = con.prepareStatement(sql2);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, boarddata.getBOARD_NAME());
+			pstmt.setString(3, boarddata.getBOARD_PASS());
+			pstmt.setString(4, boarddata.getBOARD_SUBJECT());
+			pstmt.setString(5, boarddata.getBOARD_CONTENT());
+			pstmt.setString(6, boarddata.getBOARD_FILE());
+			pstmt.setInt(7, boarddata.getBOARD_RE_REF());
+			pstmt.setInt(8, boarddata.getBOARD_RE_LEV());
+			pstmt.setInt(9, boarddata.getBOARD_RE_SEQ());
+			pstmt.setInt(10, boarddata.getBOARD_READCOUNT());
+			result = pstmt.executeUpdate();
+			
+			
+			
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			if(con!=null) try {con.close();}catch(Exception e) {e.printStackTrace();}
+		}
+		return result;
+	}
+}
